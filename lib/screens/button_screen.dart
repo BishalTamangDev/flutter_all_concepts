@@ -49,119 +49,113 @@ class _ButtonScreenState extends State<ButtonScreen> {
         title: const Text("Button"),
         centerTitle: true,
       ),
-      body: SizedBox(
-        width: double.infinity,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Padding(
-              padding: Variables.getPadding(),
-              child: Text(widget.description),
-            ),
-
-            // text button
-            const SizedBox(
-              height: 10.0,
-            ),
-
-            // text button
-            SizedBox(
-              width: double.infinity,
-              child: Card(
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: Variables.getPadding(),
-                      child: Column(
-                        children: [
-                          Text(
-                              "Text button press count : $textButtonPressCount"),
-                          const SizedBox(
-                            height: 10.0,
-                          ),
-                          TextButton(
-                            onPressed: () {
-                              pressTextButton();
-                            },
-                            child: const Text("Text Button"),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: Variables.getPadding(),
+          child: Column(
+            children: [
+              Text(widget.description),
+              // text button
+              const SizedBox(
+                height: 10.0,
               ),
-            ),
-            const SizedBox(
-              height: 10.0,
-            ),
 
-            // elevated buttons
-            SizedBox(
-              width: double.infinity,
-              child: Card(
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: Variables.getPadding(),
-                      child: Column(
-                        children: [
-                          Text(
-                              "Outlined button press count : $outlinedButtonPressCount"),
-                          const SizedBox(
-                            height: 10.0,
-                          ),
-                          OutlinedButton(
-                            onPressed: () {
-                              pressOutlinedButton();
-                            },
-                            child: const Text("Outlined Button"),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ),
-
-            const SizedBox(
-              height: 10.0,
-            ),
-
-            SizedBox(
-              width: double.infinity,
-              child: Card(
-                child: Padding(
-                  padding: Variables.getPadding(),
+              // text button
+              SizedBox(
+                width: double.infinity,
+                child: Card(
                   child: Column(
                     children: [
-                      Text(
-                          "Elevated button press count : $elevatedButtonPressCount"),
-                      const SizedBox(
-                        height: 10.0,
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          pressElevatedButton();
-                        },
-                        child: const Text("Elevated Button"),
+                      Padding(
+                        padding: Variables.getPadding(),
+                        child: Column(
+                          children: [
+                            Text(
+                                "Text button press count : $textButtonPressCount"),
+                            const SizedBox(
+                              height: 10.0,
+                            ),
+                            TextButton(
+                              onPressed: () {
+                                pressTextButton();
+                              },
+                              child: const Text("Text Button"),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
                 ),
               ),
-            ),
+              const SizedBox(
+                height: 10.0,
+              ),
 
-            // reset counting
-            const SizedBox(
-              height: 10.0,
-            ),
-            SizedBox(
-              width: double.infinity,
-              height: 40,
-              child: Padding(
-                padding: Variables.getLeftRightPadding(),
+              // elevated buttons
+              SizedBox(
+                width: double.infinity,
+                child: Card(
+                  child: Column(
+                    children: [
+                      Padding(
+                        padding: Variables.getPadding(),
+                        child: Column(
+                          children: [
+                            Text(
+                                "Outlined button press count : $outlinedButtonPressCount"),
+                            const SizedBox(
+                              height: 10.0,
+                            ),
+                            OutlinedButton(
+                              onPressed: () {
+                                pressOutlinedButton();
+                              },
+                              child: const Text("Outlined Button"),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+
+              const SizedBox(
+                height: 10.0,
+              ),
+
+              SizedBox(
+                width: double.infinity,
+                child: Card(
+                  child: Padding(
+                    padding: Variables.getPadding(),
+                    child: Column(
+                      children: [
+                        Text(
+                            "Elevated button press count : $elevatedButtonPressCount"),
+                        const SizedBox(
+                          height: 10.0,
+                        ),
+                        ElevatedButton(
+                          onPressed: () {
+                            pressElevatedButton();
+                          },
+                          child: const Text("Elevated Button"),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+
+              // reset counting
+              const SizedBox(
+                height: 10.0,
+              ),
+              SizedBox(
+                width: double.infinity,
+                height: 40,
                 child: ElevatedButton(
                   onPressed: () {
                     resetCount();
@@ -169,8 +163,8 @@ class _ButtonScreenState extends State<ButtonScreen> {
                   child: const Text("Reset Count"),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

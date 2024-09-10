@@ -1,6 +1,9 @@
 import 'package:all_concepts/screens/center_screen.dart';
 import 'package:all_concepts/screens/container_screen.dart';
 import 'package:all_concepts/screens/button_screen.dart';
+import 'package:all_concepts/screens/expanded_screen.dart';
+import 'package:all_concepts/screens/image_screen.dart';
+import 'package:all_concepts/screens/rows_columns_screen.dart';
 import 'package:all_concepts/screens/text_screen.dart';
 import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
@@ -64,6 +67,27 @@ class HomeScreen extends StatelessWidget {
             'Flexible widget used for layout and styling. It can hold a single child and allows you to control properties like width, height, padding, margin, and alignment. Additionally, you can apply decorations such as colors, borders, or shadows, making it useful for building complex layouts and custom UI designs.',
       },
       {
+        'title': 'expanded',
+        'short_description':
+            'The Expanded widget fills available space in Row or Column layouts, resizing its child proportionally.',
+        'description':
+            'The Expanded widget in Flutter is used within a Row, Column, or Flex to make its child widget take up the available remaining space. It flexibly resizes its child in proportion to other children, helping distribute space dynamically based on layout constraints.'
+      },
+      {
+        'title': 'image',
+        'short_description':
+            'The Image widget displays images from assets, network, or files with customizable size and fit.',
+        'description':
+            'The Image widget in Flutter is used to display images in your app. It supports loading images from various sources like assets, network, or files. You can customize the image\'s size, fit (e.g., cover, contain), alignment, and apply effects like color filters.',
+      },
+      {
+        'title': 'row & column',
+        'short_description':
+            'Row: Arranges widgets horizontally & Column: Arranges widgets vertically.',
+        'description':
+            'The Row and Column widgets in Flutter are used for arranging children widgets in a horizontal (Row) or vertical (Column) layout. Both widgets align their children along the main axis (Row: horizontal, Column: vertical) and can control spacing, alignment, and stretching of the children across the cross axis.',
+      },
+      {
         'title': 'text',
         'short_description':
             'A widget used to display styled or unstyled text on the screen, customizable with various formatting options.',
@@ -96,15 +120,6 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                       );
-                    } else if (screen == 'text') {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => TextScreen(
-                            description: listWidget[index]['description'],
-                          ),
-                        ),
-                      );
                     } else if (screen == 'button') {
                       Navigator.push(
                         context,
@@ -119,6 +134,42 @@ class HomeScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) => CenterScreen(
+                            description: listWidget[index]['description'],
+                          ),
+                        ),
+                      );
+                    } else if (screen == 'expanded') {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ExpandedScreen(
+                            description: listWidget[index]['description'],
+                          ),
+                        ),
+                      );
+                    } else if (screen == 'image') {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ImageScreen(
+                            description: listWidget[index]['description'],
+                          ),
+                        ),
+                      );
+                    } else if (screen == 'row & column') {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => RowsColumnScreen(
+                            description: listWidget[index]['description'],
+                          ),
+                        ),
+                      );
+                    } else if (screen == 'text') {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => TextScreen(
                             description: listWidget[index]['description'],
                           ),
                         ),

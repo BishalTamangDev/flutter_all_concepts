@@ -13,16 +13,13 @@ class TextScreen extends StatelessWidget {
         centerTitle: true,
         title: const Text("Text"),
       ),
-      body:  Container(
-        color: Variables.getBgColor(),
+      body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: Variables.getPadding(),
           child: Column(
             children: [
               Text(description),
-              const SizedBox(
-                height: 10,
-              ),
+              const SizedBox(height: 10),
 
               // simple text widget
               const Card(
@@ -31,26 +28,21 @@ class TextScreen extends StatelessWidget {
                   subtitle: Text("No style added"),
                 ),
               ),
-              const SizedBox(
-                height: 10,
-              ),
+              const SizedBox(height: 10),
               // simple text widget
               const Card(
                 child: ListTile(
                   title: Text(
                     "The quick brown fox jumps over the lazy dog.",
                     style: TextStyle(
-                      color: Colors.green,
-                      fontWeight: FontWeight.w600,
-                      fontStyle: FontStyle.italic
-                    ),
+                        color: Colors.green,
+                        fontWeight: FontWeight.w600,
+                        fontStyle: FontStyle.italic),
                   ),
                   subtitle: Text("Text style"),
                 ),
               ),
-              const SizedBox(
-                height: 10,
-              ),
+              const SizedBox(height: 10),
               // simple text widget
               Card(
                 child: ListTile(
