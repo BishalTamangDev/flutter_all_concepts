@@ -4,6 +4,7 @@ import 'package:all_concepts/screens/button_screen.dart';
 import 'package:all_concepts/screens/expanded_screen.dart';
 import 'package:all_concepts/screens/image_screen.dart';
 import 'package:all_concepts/screens/inkwell_screen.dart';
+import 'package:all_concepts/screens/listview_screen.dart';
 import 'package:all_concepts/screens/margin_screen.dart';
 import 'package:all_concepts/screens/rows_columns_screen.dart';
 import 'package:all_concepts/screens/text_screen.dart';
@@ -84,8 +85,17 @@ class HomeScreen extends StatelessWidget {
       },
       {
         'title': 'inkwell',
-        'short_description': 'The InkWell widget adds a tappable ripple effect to any widget, making it interactive.',
-        'description': 'The InkWell widget in Flutter provides a material "ripple" effect when tapped, making it ideal for interactive elements. It wraps around any widget to detect taps, gestures, and other interactions, offering a visual feedback to the user.',
+        'short_description':
+            'The InkWell widget adds a tappable ripple effect to any widget, making it interactive.',
+        'description':
+            'The InkWell widget in Flutter provides a material "ripple" effect when tapped, making it ideal for interactive elements. It wraps around any widget to detect taps, gestures, and other interactions, offering a visual feedback to the user.',
+      },
+      {
+        'title': 'listView',
+        'short_description':
+            'The ListView widget creates a scrollable list of widgets, ideal for displaying many items.',
+        'description':
+            'The ListView widget in Flutter is a scrollable list of widgets arranged linearly. It’s used to display a large number of items vertically or horizontally, with support for both static and dynamic content, lazy loading, and custom item layouts.',
       },
       {
         'title': 'margin',
@@ -175,6 +185,15 @@ class HomeScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) => InkwellScreen(
+                            description: listWidget[index]['description'],
+                          ),
+                        ),
+                      );
+                    } else if (screen == 'listView') {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ListViewScreen(
                             description: listWidget[index]['description'],
                           ),
                         ),
