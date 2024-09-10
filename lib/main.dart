@@ -10,6 +10,7 @@ import 'package:all_concepts/screens/listview_screen.dart';
 import 'package:all_concepts/screens/margin_screen.dart';
 import 'package:all_concepts/screens/rows_columns_screen.dart';
 import 'package:all_concepts/screens/text_screen.dart';
+import 'package:all_concepts/screens/wrap_screen.dart';
 import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
@@ -144,6 +145,13 @@ class HomeScreen extends StatelessWidget {
         'description':
             'Used to display a string of text on the screen. You can customize its appearance with various styling options like font size, color, weight, and alignment. It’s commonly used to show static or dynamic content in your app, such as labels, messages, or headings, and plays a crucial role in UI design.',
       },
+      {
+        'title': 'wrap',
+        'short_description':
+            'The Wrap widget arranges children in multiple lines, automatically wrapping when space is limited.',
+        'description':
+            'The Wrap widget in Flutter arranges its children in multiple horizontal or vertical lines, automatically moving them to the next line when they exceed the available space. It’s ideal for creating responsive layouts where items need to wrap to fit within the screen.',
+      }
     ];
     return Scaffold(
       appBar: AppBar(
@@ -269,6 +277,16 @@ class HomeScreen extends StatelessWidget {
                         MaterialPageRoute(
                           builder: (context) => TextScreen(
                             description: listWidget[index]['description'],
+                          ),
+                        ),
+                      );
+                    } else if (screen == 'wrap') {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => WrapScreen(
+                            description: listWidget[index]['description'],
+                            arrFriend: arrFriend,
                           ),
                         ),
                       );

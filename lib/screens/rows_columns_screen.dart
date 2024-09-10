@@ -11,7 +11,7 @@ class RowsColumnScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Rows and Columns'),
+        title: const Text('Row and Column'),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
