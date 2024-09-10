@@ -2,7 +2,8 @@ import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
 class ListViewScreen extends StatelessWidget {
-  const ListViewScreen({super.key, this.description = 'Empty!', required this.arrFriend});
+  const ListViewScreen(
+      {super.key, this.description = 'Empty!', required this.arrFriend});
 
   final String description;
 

@@ -2,6 +2,7 @@ import 'package:all_concepts/screens/center_screen.dart';
 import 'package:all_concepts/screens/container_screen.dart';
 import 'package:all_concepts/screens/button_screen.dart';
 import 'package:all_concepts/screens/expanded_screen.dart';
+import 'package:all_concepts/screens/gridview_screen.dart';
 import 'package:all_concepts/screens/image_screen.dart';
 import 'package:all_concepts/screens/inkwell_screen.dart';
 import 'package:all_concepts/screens/listtile_screen.dart';
@@ -86,6 +87,13 @@ class HomeScreen extends StatelessWidget {
             'The Expanded widget fills available space in Row or Column layouts, resizing its child proportionally.',
         'description':
             'The Expanded widget in Flutter is used within a Row, Column, or Flex to make its child widget take up the available remaining space. It flexibly resizes its child in proportion to other children, helping distribute space dynamically based on layout constraints.',
+      },
+      {
+        'title': 'gridView',
+        'short_description':
+            'The GridView widget arranges items in a scrollable 2D grid of rows and columns.',
+        'description':
+            'The GridView widget in Flutter is used to display widgets in a 2D grid. It arranges items in rows and columns, making it ideal for creating layouts like photo galleries. It supports both fixed and dynamic grids with scrollable content.',
       },
       {
         'title': 'image',
@@ -189,6 +197,16 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                       );
+                    } else if (screen == 'gridView') {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => GridViewScreen(
+                            description: listWidget[index]['description'],
+                            arrFriend: arrFriend,
+                          ),
+                        ),
+                      );
                     } else if (screen == 'image') {
                       Navigator.push(
                         context,
@@ -212,8 +230,9 @@ class HomeScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) => ListTileScreen(
-                              description: listWidget[index]['description'],
-                              arrFriend: arrFriend),
+                            description: listWidget[index]['description'],
+                            arrFriend: arrFriend,
+                          ),
                         ),
                       );
                     } else if (screen == 'listView') {

@@ -68,7 +68,7 @@ class RowsColumnScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 20),
-              const Text('Row'),
+              const Text('Column'),
             ],
           ),
         ),
