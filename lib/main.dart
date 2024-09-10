@@ -3,6 +3,7 @@ import 'package:all_concepts/screens/container_screen.dart';
 import 'package:all_concepts/screens/button_screen.dart';
 import 'package:all_concepts/screens/expanded_screen.dart';
 import 'package:all_concepts/screens/image_screen.dart';
+import 'package:all_concepts/screens/inkwell_screen.dart';
 import 'package:all_concepts/screens/margin_screen.dart';
 import 'package:all_concepts/screens/rows_columns_screen.dart';
 import 'package:all_concepts/screens/text_screen.dart';
@@ -72,7 +73,7 @@ class HomeScreen extends StatelessWidget {
         'short_description':
             'The Expanded widget fills available space in Row or Column layouts, resizing its child proportionally.',
         'description':
-            'The Expanded widget in Flutter is used within a Row, Column, or Flex to make its child widget take up the available remaining space. It flexibly resizes its child in proportion to other children, helping distribute space dynamically based on layout constraints.'
+            'The Expanded widget in Flutter is used within a Row, Column, or Flex to make its child widget take up the available remaining space. It flexibly resizes its child in proportion to other children, helping distribute space dynamically based on layout constraints.',
       },
       {
         'title': 'image',
@@ -82,11 +83,16 @@ class HomeScreen extends StatelessWidget {
             'The Image widget in Flutter is used to display images in your app. It supports loading images from various sources like assets, network, or files. You can customize the image\'s size, fit (e.g., cover, contain), alignment, and apply effects like color filters.',
       },
       {
+        'title': 'inkwell',
+        'short_description': 'The InkWell widget adds a tappable ripple effect to any widget, making it interactive.',
+        'description': 'The InkWell widget in Flutter provides a material "ripple" effect when tapped, making it ideal for interactive elements. It wraps around any widget to detect taps, gestures, and other interactions, offering a visual feedback to the user.',
+      },
+      {
         'title': 'margin',
         'short_description':
             'Margin adds space outside a widget, separating it from other elements.',
         'description':
-            'Margin is a property (typically used in the Container widget) that adds empty space outside the widget\'s boundary, separating it from neighboring elements. This spacing helps with layout and positioning by creating a visual gap around the widget.'
+            'Margin is a property (typically used in the Container widget) that adds empty space outside the widget\'s boundary, separating it from neighboring elements. This spacing helps with layout and positioning by creating a visual gap around the widget.',
       },
       {
         'title': 'row & column',
@@ -160,6 +166,15 @@ class HomeScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) => ImageScreen(
+                            description: listWidget[index]['description'],
+                          ),
+                        ),
+                      );
+                    } else if (screen == 'inkwell') {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => InkwellScreen(
                             description: listWidget[index]['description'],
                           ),
                         ),
