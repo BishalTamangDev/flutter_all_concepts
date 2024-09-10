@@ -4,6 +4,7 @@ import 'package:all_concepts/screens/button_screen.dart';
 import 'package:all_concepts/screens/expanded_screen.dart';
 import 'package:all_concepts/screens/image_screen.dart';
 import 'package:all_concepts/screens/inkwell_screen.dart';
+import 'package:all_concepts/screens/listtile_screen.dart';
 import 'package:all_concepts/screens/listview_screen.dart';
 import 'package:all_concepts/screens/margin_screen.dart';
 import 'package:all_concepts/screens/rows_columns_screen.dart';
@@ -47,6 +48,16 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    List arrFriend = [
+      'alexander',
+      'brian',
+      'chris',
+      'devil',
+      'eleana',
+      'firooz',
+      'gita',
+    ];
+
     List listWidget = [
       {
         'title': 'button',
@@ -96,6 +107,13 @@ class HomeScreen extends StatelessWidget {
             'The ListView widget creates a scrollable list of widgets, ideal for displaying many items.',
         'description':
             'The ListView widget in Flutter is a scrollable list of widgets arranged linearly. It’s used to display a large number of items vertically or horizontally, with support for both static and dynamic content, lazy loading, and custom item layouts.',
+      },
+      {
+        'title': 'listTile',
+        'short_description':
+            'The ListTile widget creates a structured row with text and optional icons, used for building list items easily.',
+        'description':
+            'The ListTile widget in Flutter is a single fixed-height row that typically contains text, an optional leading or trailing icon, and is often used in lists. It simplifies creating standard list items with predefined layouts for icons, titles, and subtitles.',
       },
       {
         'title': 'margin',
@@ -189,12 +207,22 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                       );
+                    } else if (screen == 'listTile') {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ListTileScreen(
+                              description: listWidget[index]['description'],
+                              arrFriend: arrFriend),
+                        ),
+                      );
                     } else if (screen == 'listView') {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => ListViewScreen(
                             description: listWidget[index]['description'],
+                            arrFriend: arrFriend,
                           ),
                         ),
                       );

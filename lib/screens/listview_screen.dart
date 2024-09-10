@@ -2,19 +2,11 @@ import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
 class ListViewScreen extends StatelessWidget {
-  ListViewScreen({super.key, this.description = 'Empty!'});
+  const ListViewScreen({super.key, this.description = 'Empty!', required this.arrFriend});
 
   final String description;
 
-  List arrFriend = [
-    'alexander',
-    'brian',
-    'chris',
-    'devil',
-    'eleana',
-    'firooz',
-    'gita',
-  ];
+  final List arrFriend;
 
   @override
   Widget build(BuildContext context) {
