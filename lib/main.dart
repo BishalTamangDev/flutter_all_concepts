@@ -3,6 +3,7 @@ import 'package:all_concepts/screens/container_screen.dart';
 import 'package:all_concepts/screens/button_screen.dart';
 import 'package:all_concepts/screens/expanded_screen.dart';
 import 'package:all_concepts/screens/image_screen.dart';
+import 'package:all_concepts/screens/margin_screen.dart';
 import 'package:all_concepts/screens/rows_columns_screen.dart';
 import 'package:all_concepts/screens/text_screen.dart';
 import 'package:all_concepts/variables/variables.dart';
@@ -81,6 +82,13 @@ class HomeScreen extends StatelessWidget {
             'The Image widget in Flutter is used to display images in your app. It supports loading images from various sources like assets, network, or files. You can customize the image\'s size, fit (e.g., cover, contain), alignment, and apply effects like color filters.',
       },
       {
+        'title': 'margin',
+        'short_description':
+            'Margin adds space outside a widget, separating it from other elements.',
+        'description':
+            'Margin is a property (typically used in the Container widget) that adds empty space outside the widget\'s boundary, separating it from neighboring elements. This spacing helps with layout and positioning by creating a visual gap around the widget.'
+      },
+      {
         'title': 'row & column',
         'short_description':
             'Row: Arranges widgets horizontally & Column: Arranges widgets vertically.',
@@ -152,6 +160,15 @@ class HomeScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) => ImageScreen(
+                            description: listWidget[index]['description'],
+                          ),
+                        ),
+                      );
+                    } else if (screen == 'margin') {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => MarginScreen(
                             description: listWidget[index]['description'],
                           ),
                         ),
