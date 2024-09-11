@@ -12,6 +12,7 @@ import 'package:all_concepts/screens/gridview_screen.dart';
 import 'package:all_concepts/screens/icon_screen.dart';
 import 'package:all_concepts/screens/image_screen.dart';
 import 'package:all_concepts/screens/inkwell_screen.dart';
+import 'package:all_concepts/screens/input_screen.dart';
 import 'package:all_concepts/screens/listtile_screen.dart';
 import 'package:all_concepts/screens/listview_screen.dart';
 import 'package:all_concepts/screens/margin_screen.dart';
@@ -71,6 +72,13 @@ class HomeScreen extends StatelessWidget {
     ];
 
     List listWidget = [
+      {
+        'title': 'animation',
+        'short_description':
+            'Adds smooth transitions and effects with widgets like AnimationController and AnimatedContainer.',
+        'description':
+            'Animation in Flutter helps create smooth transitions and effects. Flutter provides basic animation support using AnimationController, and Tween, along with higher-level widgets like AnimatedContainer and Hero.',
+      },
       {
         'title': 'button',
         'short_description':
@@ -162,6 +170,13 @@ class HomeScreen extends StatelessWidget {
             'The InkWell widget adds a tappable ripple effect to any widget, making it interactive.',
         'description':
             'The InkWell widget in Flutter provides a material "ripple" effect when tapped, making it ideal for interactive elements. It wraps around any widget to detect taps, gestures, and other interactions, offering a visual feedback to the user.',
+      },
+      {
+        'title': 'input',
+        'short_description':
+            'Widgets like TextField, Checkbox, and Slider handle user inputs.',
+        'description':
+            'Input widgets in Flutter allow users to interact with the app. Common input widgets include TextField for text input, Checkbox, Radio, Slider, and Switch for various user selections.',
       },
       {
         'title': 'listView',
@@ -370,6 +385,15 @@ class HomeScreen extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => InkwellScreen(
+                              description: listWidget[index]['description'],
+                            ),
+                          ),
+                        );
+                      } else if (screen == 'input') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => InputScreen(
                               description: listWidget[index]['description'],
                             ),
                           ),
