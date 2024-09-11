@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
@@ -67,8 +65,6 @@ class _DatePickerState extends State<DatePickerScreen> {
                             appointmentDateYear = appointmentDate!.year;
                             appointmentDateMonth = appointmentDate!.month;
                             appointmentDateDay = appointmentDate!.day;
-
-                            String finalDate = "$appointmentDateYear";
                           }
                         });
                       }

@@ -3,6 +3,7 @@ import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
 import 'inputs/date_picker.dart';
+import 'inputs/time_picker.dart';
 
 class InputScreen extends StatelessWidget {
   InputScreen({super.key, this.description = "Empty!"});
@@ -119,6 +120,16 @@ class InputScreen extends StatelessWidget {
                               builder: (context) => TextFieldScreen(
                                 description: arrInputWidgets[index]
                                     ['description'],
+                              ),
+                            ),
+                          );
+                        } else if (arrInputWidgets[index]['title'] == 'TimePicker') {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => TimePickerScreen(
+                                description: arrInputWidgets[index]
+                                ['description'],
                               ),
                             ),
                           );
