@@ -2,8 +2,13 @@ import 'package:all_concepts/screens/inputs/text_field_screen.dart';
 import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
-import 'inputs/date_picker.dart';
-import 'inputs/time_picker.dart';
+import 'inputs/checkbox_screen.dart';
+import 'inputs/date_picker_screen.dart';
+import 'inputs/dropdown_button_screen.dart';
+import 'inputs/radio_screen.dart';
+import 'inputs/range_slider_screen.dart';
+import 'inputs/switch_screen.dart';
+import 'inputs/time_picker_screen.dart';
 
 class InputScreen extends StatelessWidget {
   InputScreen({super.key, this.description = "Empty!"});
@@ -103,11 +108,61 @@ class InputScreen extends StatelessWidget {
                     ),
                     child: ListTile(
                       onTap: () {
-                        if (arrInputWidgets[index]['title'] == 'DatePicker') {
+                        if (arrInputWidgets[index]['title'] == 'Checkbox') {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => CheckboxScreen(
+                                description: arrInputWidgets[index]
+                                ['description'],
+                              ),
+                            ),
+                          );
+                        } else if (arrInputWidgets[index]['title'] == 'DatePicker') {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context) => DatePickerScreen(
+                                description: arrInputWidgets[index]
+                                ['description'],
+                              ),
+                            ),
+                          );
+                        } else if (arrInputWidgets[index]['title'] == 'DropdownButton') {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DropdownButtonScreen(
+                                description: arrInputWidgets[index]
+                                ['description'],
+                              ),
+                            ),
+                          );
+                        } else if (arrInputWidgets[index]['title'] == 'Radio') {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => RadioScreen(
+                                description: arrInputWidgets[index]
+                                ['description'],
+                              ),
+                            ),
+                          );
+                        } else if (arrInputWidgets[index]['title'] == 'RangeSlider') {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => RangeSliderScreen(
+                                description: arrInputWidgets[index]
+                                ['description'],
+                              ),
+                            ),
+                          );
+                        } else if (arrInputWidgets[index]['title'] == 'Switch') {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SwitchScreen(
                                 description: arrInputWidgets[index]
                                 ['description'],
                               ),
