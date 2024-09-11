@@ -6,8 +6,10 @@ import 'package:all_concepts/screens/container_screen.dart';
 import 'package:all_concepts/screens/button_screen.dart';
 import 'package:all_concepts/screens/custom_font.dart';
 import 'package:all_concepts/screens/expanded_screen.dart';
+import 'package:all_concepts/screens/fontawesome_icon_screen.dart';
 import 'package:all_concepts/screens/gradient_screen.dart';
 import 'package:all_concepts/screens/gridview_screen.dart';
+import 'package:all_concepts/screens/icon_screen.dart';
 import 'package:all_concepts/screens/image_screen.dart';
 import 'package:all_concepts/screens/inkwell_screen.dart';
 import 'package:all_concepts/screens/listtile_screen.dart';
@@ -317,6 +319,15 @@ class HomeScreen extends StatelessWidget {
                             ),
                           ),
                         );
+                      } else if (screen == 'fontAwesomeIcon') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => FontAwesomeIconScreen(
+                              description: listWidget[index]['description'],
+                            ),
+                          ),
+                        );
                       } else if (screen == 'gradient') {
                         Navigator.push(
                           context,
@@ -333,6 +344,15 @@ class HomeScreen extends StatelessWidget {
                             builder: (context) => GridViewScreen(
                               description: listWidget[index]['description'],
                               arrFriend: arrFriend,
+                            ),
+                          ),
+                        );
+                      } else if (screen == 'icon') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => IconScreen(
+                              description: listWidget[index]['description'],
                             ),
                           ),
                         );
