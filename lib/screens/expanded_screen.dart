@@ -1,5 +1,4 @@
 import 'package:all_concepts/variables/variables.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class ExpandedScreen extends StatelessWidget {
@@ -11,7 +10,7 @@ class ExpandedScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Expanded Screen"),
+        title: const Text("Expanded"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(

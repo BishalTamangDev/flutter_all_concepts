@@ -4,6 +4,7 @@ import 'package:all_concepts/screens/clip_r_rect.dart';
 import 'package:all_concepts/screens/constrained_box_screen.dart';
 import 'package:all_concepts/screens/container_screen.dart';
 import 'package:all_concepts/screens/button_screen.dart';
+import 'package:all_concepts/screens/custom_font.dart';
 import 'package:all_concepts/screens/expanded_screen.dart';
 import 'package:all_concepts/screens/gradient_screen.dart';
 import 'package:all_concepts/screens/gridview_screen.dart';
@@ -109,11 +110,23 @@ class HomeScreen extends StatelessWidget {
             'Flexible widget used for layout and styling. It can hold a single child and allows you to control properties like width, height, padding, margin, and alignment. Additionally, you can apply decorations such as colors, borders, or shadows, making it useful for building complex layouts and custom UI designs.',
       },
       {
+        'title': 'custom Font',
+        'short_description': 'Use your own font in the app.',
+        'description':
+            'Custom Font allows you to use your own font files in the app. You include the font in your project and reference it in the pubspec.yaml file, then apply it to your text widgets.',
+      },
+      {
         'title': 'expanded',
         'short_description':
             'The Expanded widget fills available space in Row or Column layouts, resizing its child proportionally.',
         'description':
             'The Expanded widget in Flutter is used within a Row, Column, or Flex to make its child widget take up the available remaining space. It flexibly resizes its child in proportion to other children, helping distribute space dynamically based on layout constraints.',
+      },
+      {
+        'title': 'fontAwesomeIcon',
+        'short_description': 'Font Awesome icons using a package.',
+        'description':
+            'FontAwesomeIcon displays icons from the popular Font Awesome icon library. It requires the font_awesome_flutter package and gives access to a wide range of icons.',
       },
       {
         'title': 'gradient',
@@ -127,6 +140,12 @@ class HomeScreen extends StatelessWidget {
             'The GridView widget arranges items in a scrollable 2D grid of rows and columns.',
         'description':
             'The GridView widget in Flutter is used to display widgets in a 2D grid. It arranges items in rows and columns, making it ideal for creating layouts like photo galleries. It supports both fixed and dynamic grids with scrollable content.',
+      },
+      {
+        'title': 'icon',
+        'short_description': 'Displays built-in icons like Material Icons.',
+        'description':
+            'Icon widget displays an icon from a set of built-in icons, typically Material Icons or Cupertino Icons. You can customize its size, color, and other properties.',
       },
       {
         'title': 'image',
@@ -226,20 +245,20 @@ class HomeScreen extends StatelessWidget {
                     onTap: () {
                       String screen = listWidget[index]['title'];
 
-                      if (screen == 'container') {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => ContainerScreen(
-                              description: listWidget[index]['description'],
-                            ),
-                          ),
-                        );
-                      } else if (screen == 'button') {
+                      if (screen == 'button') {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) => ButtonScreen(
+                              description: listWidget[index]['description'],
+                            ),
+                          ),
+                        );
+                      } else if (screen == 'container') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ContainerScreen(
                               description: listWidget[index]['description'],
                             ),
                           ),
@@ -276,6 +295,15 @@ class HomeScreen extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => ConstrainedBoxScreen(
+                              description: listWidget[index]['description'],
+                            ),
+                          ),
+                        );
+                      } else if (screen == 'custom Font') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CustomFontScreen(
                               description: listWidget[index]['description'],
                             ),
                           ),
