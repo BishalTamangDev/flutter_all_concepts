@@ -2,6 +2,8 @@ import 'package:all_concepts/screens/inputs/text_field_screen.dart';
 import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
+import 'inputs/date_picker.dart';
+
 class InputScreen extends StatelessWidget {
   InputScreen({super.key, this.description = "Empty!"});
 
@@ -100,7 +102,17 @@ class InputScreen extends StatelessWidget {
                     ),
                     child: ListTile(
                       onTap: () {
-                        if (arrInputWidgets[index]['title'] == 'TextField') {
+                        if (arrInputWidgets[index]['title'] == 'DatePicker') {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => DatePickerScreen(
+                                description: arrInputWidgets[index]
+                                ['description'],
+                              ),
+                            ),
+                          );
+                        } else if (arrInputWidgets[index]['title'] == 'TextField') {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
