@@ -21,6 +21,12 @@ class CircleAvatarScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Text(description),
+              // text button
+              const SizedBox(
+                height: 20.0,
+              ),
+
               const CircleAvatar(),
               const SizedBox(height: 10.0),
               const Text("Simple Circle Avatar"),

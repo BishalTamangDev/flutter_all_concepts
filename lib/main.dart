@@ -1,5 +1,7 @@
 import 'package:all_concepts/screens/center_screen.dart';
 import 'package:all_concepts/screens/circle_avatar_screen.dart';
+import 'package:all_concepts/screens/clip_r_rect.dart';
+import 'package:all_concepts/screens/constrained_box_screen.dart';
 import 'package:all_concepts/screens/container_screen.dart';
 import 'package:all_concepts/screens/button_screen.dart';
 import 'package:all_concepts/screens/expanded_screen.dart';
@@ -9,7 +11,9 @@ import 'package:all_concepts/screens/inkwell_screen.dart';
 import 'package:all_concepts/screens/listtile_screen.dart';
 import 'package:all_concepts/screens/listview_screen.dart';
 import 'package:all_concepts/screens/margin_screen.dart';
+import 'package:all_concepts/screens/positioned_screen.dart';
 import 'package:all_concepts/screens/rows_columns_screen.dart';
+import 'package:all_concepts/screens/stack_screen.dart';
 import 'package:all_concepts/screens/text_screen.dart';
 import 'package:all_concepts/screens/wrap_screen.dart';
 import 'package:all_concepts/variables/variables.dart';
@@ -84,6 +88,18 @@ class HomeScreen extends StatelessWidget {
             'The CircleAvatar widget in Flutter is used to create a circular profile image or icon. It’s commonly used to display user avatars, allowing you to easily add an image or background color within a circular shape.',
       },
       {
+        'title': 'clipRRect',
+        'short_description': 'Clips widget with rounded corners.',
+        'description':
+            'ClipRRect clips its child widget with rounded corners. You can adjust the corner radius to create smooth edges for any widget.'
+      },
+      {
+        'title': 'constrainedBox',
+        'short_description': 'Adds size constraints to a widget.',
+        'description':
+            'ConstrainedBox adds size constraints to its child widget, such as minimum and maximum height and width, ensuring that the child stays within those bounds.',
+      },
+      {
         'title': 'container',
         'short_description':
             'A flexible layout widget that can hold a child and customize size, padding, margin, and apply decorations like color or borders.',
@@ -138,6 +154,12 @@ class HomeScreen extends StatelessWidget {
             'Margin adds space outside a widget, separating it from other elements.',
         'description':
             'Margin is a property (typically used in the Container widget) that adds empty space outside the widget\'s boundary, separating it from neighboring elements. This spacing helps with layout and positioning by creating a visual gap around the widget.',
+      },
+      {
+        'title': 'positioned',
+        'short_description': 'Positions a widget inside a Stack',
+        'description':
+            'Positioned is used inside a Stack to position a widget at a specific place within the stack. You can control placement with properties like top, left, right, and bottom.',
       },
       {
         'title': 'row & column',
@@ -211,11 +233,29 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                       );
+                    } else if (screen == 'clipRRect') {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ClipRRectScreen(
+                            description: listWidget[index]['description'],
+                          ),
+                        ),
+                      );
                     } else if (screen == 'circleAvatar') {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => CircleAvatarScreen(
+                            description: listWidget[index]['description'],
+                          ),
+                        ),
+                      );
+                    } else if (screen == 'constrainedBox') {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => ConstrainedBoxScreen(
                             description: listWidget[index]['description'],
                           ),
                         ),
@@ -286,11 +326,29 @@ class HomeScreen extends StatelessWidget {
                           ),
                         ),
                       );
+                    } else if (screen == 'positioned') {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => PositionedScreen(
+                            description: listWidget[index]['description'],
+                          ),
+                        ),
+                      );
                     } else if (screen == 'row & column') {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => RowsColumnScreen(
+                            description: listWidget[index]['description'],
+                          ),
+                        ),
+                      );
+                    } else if (screen == 'stack') {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => StackScreen(
                             description: listWidget[index]['description'],
                           ),
                         ),
