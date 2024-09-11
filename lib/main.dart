@@ -5,6 +5,7 @@ import 'package:all_concepts/screens/constrained_box_screen.dart';
 import 'package:all_concepts/screens/container_screen.dart';
 import 'package:all_concepts/screens/button_screen.dart';
 import 'package:all_concepts/screens/expanded_screen.dart';
+import 'package:all_concepts/screens/gradient_screen.dart';
 import 'package:all_concepts/screens/gridview_screen.dart';
 import 'package:all_concepts/screens/image_screen.dart';
 import 'package:all_concepts/screens/inkwell_screen.dart';
@@ -12,6 +13,7 @@ import 'package:all_concepts/screens/listtile_screen.dart';
 import 'package:all_concepts/screens/listview_screen.dart';
 import 'package:all_concepts/screens/margin_screen.dart';
 import 'package:all_concepts/screens/positioned_screen.dart';
+import 'package:all_concepts/screens/rich_text_screen.dart';
 import 'package:all_concepts/screens/rows_columns_screen.dart';
 import 'package:all_concepts/screens/stack_screen.dart';
 import 'package:all_concepts/screens/text_screen.dart';
@@ -114,6 +116,12 @@ class HomeScreen extends StatelessWidget {
             'The Expanded widget in Flutter is used within a Row, Column, or Flex to make its child widget take up the available remaining space. It flexibly resizes its child in proportion to other children, helping distribute space dynamically based on layout constraints.',
       },
       {
+        'title': 'gradient',
+        'short_description': 'Creates smooth color transitions.',
+        'description':
+            'Gradient is used to create smooth transitions between colors. Common types include LinearGradient and RadialGradient, which can be applied to backgrounds or shapes.',
+      },
+      {
         'title': 'gridView',
         'short_description':
             'The GridView widget arranges items in a scrollable 2D grid of rows and columns.',
@@ -162,6 +170,12 @@ class HomeScreen extends StatelessWidget {
             'Positioned is used inside a Stack to position a widget at a specific place within the stack. You can control placement with properties like top, left, right, and bottom.',
       },
       {
+        'title': 'richText',
+        'short_description': 'Displays text with multiple styles.',
+        'description':
+            'RichText allows for displaying text with multiple styles. You can style different parts of the text differently within a single widget, like changing colors, fonts, or weights.',
+      },
+      {
         'title': 'row & column',
         'short_description':
             'Row: Arranges widgets horizontally & Column: Arranges widgets vertically.',
@@ -197,207 +211,232 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Container(
         color: Variables.getBgColor(),
-        child: Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: ListView.builder(
-            itemBuilder: (context, index) {
-              return Card(
-                child: ListTile(
-                  onTap: () {
-                    String screen = listWidget[index]['title'];
+        child: Container(
+          color: Variables.getBgColor(),
+          margin: const EdgeInsets.only(bottom: 16.0),
+          child: Padding(
+            padding: Variables.getLeftRightPadding(),
+            child: ListView.builder(
+              itemBuilder: (context, index) {
+                return Card(
+                  margin: const EdgeInsets.only(
+                    top: 16.0,
+                  ),
+                  child: ListTile(
+                    onTap: () {
+                      String screen = listWidget[index]['title'];
 
-                    if (screen == 'container') {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ContainerScreen(
-                            description: listWidget[index]['description'],
+                      if (screen == 'container') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ContainerScreen(
+                              description: listWidget[index]['description'],
+                            ),
                           ),
-                        ),
-                      );
-                    } else if (screen == 'button') {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ButtonScreen(
-                            description: listWidget[index]['description'],
+                        );
+                      } else if (screen == 'button') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ButtonScreen(
+                              description: listWidget[index]['description'],
+                            ),
                           ),
-                        ),
-                      );
-                    } else if (screen == 'center') {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => CenterScreen(
-                            description: listWidget[index]['description'],
+                        );
+                      } else if (screen == 'center') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CenterScreen(
+                              description: listWidget[index]['description'],
+                            ),
                           ),
-                        ),
-                      );
-                    } else if (screen == 'clipRRect') {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ClipRRectScreen(
-                            description: listWidget[index]['description'],
+                        );
+                      } else if (screen == 'clipRRect') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ClipRRectScreen(
+                              description: listWidget[index]['description'],
+                            ),
                           ),
-                        ),
-                      );
-                    } else if (screen == 'circleAvatar') {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => CircleAvatarScreen(
-                            description: listWidget[index]['description'],
+                        );
+                      } else if (screen == 'circleAvatar') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => CircleAvatarScreen(
+                              description: listWidget[index]['description'],
+                            ),
                           ),
-                        ),
-                      );
-                    } else if (screen == 'constrainedBox') {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ConstrainedBoxScreen(
-                            description: listWidget[index]['description'],
+                        );
+                      } else if (screen == 'constrainedBox') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ConstrainedBoxScreen(
+                              description: listWidget[index]['description'],
+                            ),
                           ),
-                        ),
-                      );
-                    } else if (screen == 'expanded') {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ExpandedScreen(
-                            description: listWidget[index]['description'],
+                        );
+                      } else if (screen == 'expanded') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ExpandedScreen(
+                              description: listWidget[index]['description'],
+                            ),
                           ),
-                        ),
-                      );
-                    } else if (screen == 'gridView') {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => GridViewScreen(
-                            description: listWidget[index]['description'],
-                            arrFriend: arrFriend,
+                        );
+                      } else if (screen == 'gradient') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => GradientScreen(
+                              description: listWidget[index]['description'],
+                            ),
                           ),
-                        ),
-                      );
-                    } else if (screen == 'image') {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ImageScreen(
-                            description: listWidget[index]['description'],
+                        );
+                      } else if (screen == 'gridView') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => GridViewScreen(
+                              description: listWidget[index]['description'],
+                              arrFriend: arrFriend,
+                            ),
                           ),
-                        ),
-                      );
-                    } else if (screen == 'inkwell') {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => InkwellScreen(
-                            description: listWidget[index]['description'],
+                        );
+                      } else if (screen == 'image') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ImageScreen(
+                              description: listWidget[index]['description'],
+                            ),
                           ),
-                        ),
-                      );
-                    } else if (screen == 'listTile') {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ListTileScreen(
-                            description: listWidget[index]['description'],
-                            arrFriend: arrFriend,
+                        );
+                      } else if (screen == 'inkwell') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => InkwellScreen(
+                              description: listWidget[index]['description'],
+                            ),
                           ),
-                        ),
-                      );
-                    } else if (screen == 'listView') {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => ListViewScreen(
-                            description: listWidget[index]['description'],
-                            arrFriend: arrFriend,
+                        );
+                      } else if (screen == 'listTile') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ListTileScreen(
+                              description: listWidget[index]['description'],
+                              arrFriend: arrFriend,
+                            ),
                           ),
-                        ),
-                      );
-                    } else if (screen == 'margin') {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => MarginScreen(
-                            description: listWidget[index]['description'],
+                        );
+                      } else if (screen == 'listView') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => ListViewScreen(
+                              description: listWidget[index]['description'],
+                              arrFriend: arrFriend,
+                            ),
                           ),
-                        ),
-                      );
-                    } else if (screen == 'positioned') {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => PositionedScreen(
-                            description: listWidget[index]['description'],
+                        );
+                      } else if (screen == 'margin') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => MarginScreen(
+                              description: listWidget[index]['description'],
+                            ),
                           ),
-                        ),
-                      );
-                    } else if (screen == 'row & column') {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => RowsColumnScreen(
-                            description: listWidget[index]['description'],
+                        );
+                      } else if (screen == 'positioned') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => PositionedScreen(
+                              description: listWidget[index]['description'],
+                            ),
                           ),
-                        ),
-                      );
-                    } else if (screen == 'stack') {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => StackScreen(
-                            description: listWidget[index]['description'],
+                        );
+                      } else if (screen == 'richText') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => RichTextScreen(
+                              description: listWidget[index]['description'],
+                            ),
                           ),
-                        ),
-                      );
-                    } else if (screen == 'text') {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => TextScreen(
-                            description: listWidget[index]['description'],
+                        );
+                      } else if (screen == 'row & column') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => RowsColumnScreen(
+                              description: listWidget[index]['description'],
+                            ),
                           ),
-                        ),
-                      );
-                    } else if (screen == 'wrap') {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => WrapScreen(
-                            description: listWidget[index]['description'],
-                            arrFriend: arrFriend,
+                        );
+                      } else if (screen == 'stack') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => StackScreen(
+                              description: listWidget[index]['description'],
+                            ),
                           ),
-                        ),
-                      );
-                    }
-                  },
-                  title: Padding(
-                    padding: const EdgeInsets.only(top: 5.0),
-                    child: Text(
-                      "${listWidget[index]['title'][0].toUpperCase()}${listWidget[index]['title'].substring(1)}",
-                      style: Theme.of(context).textTheme.headlineLarge,
+                        );
+                      } else if (screen == 'text') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => TextScreen(
+                              description: listWidget[index]['description'],
+                            ),
+                          ),
+                        );
+                      } else if (screen == 'wrap') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => WrapScreen(
+                              description: listWidget[index]['description'],
+                              arrFriend: arrFriend,
+                            ),
+                          ),
+                        );
+                      }
+                    },
+                    title: Padding(
+                      padding: const EdgeInsets.only(top: 5.0),
+                      child: Text(
+                        "${listWidget[index]['title'][0].toUpperCase()}${listWidget[index]['title'].substring(1)}",
+                        style: Theme.of(context).textTheme.headlineLarge,
+                      ),
+                    ),
+                    subtitle: Padding(
+                      padding: const EdgeInsets.only(
+                        top: 5.0,
+                        bottom: 5.0,
+                      ),
+                      child: Text(
+                        listWidget[index]['short_description'],
+                      ),
+                    ),
+                    trailing: const Icon(
+                      Icons.arrow_right,
+                      color: Colors.blueGrey,
                     ),
                   ),
-                  subtitle: Padding(
-                    padding: const EdgeInsets.only(
-                      top: 5.0,
-                      bottom: 5.0,
-                    ),
-                    child: Text(
-                      listWidget[index]['short_description'],
-                    ),
-                  ),
-                  trailing: const Icon(
-                    Icons.arrow_right,
-                    color: Colors.blueGrey,
-                  ),
-                ),
-              );
-            },
-            itemCount: listWidget.length,
+                );
+              },
+              itemCount: listWidget.length,
+            ),
           ),
         ),
       ),
