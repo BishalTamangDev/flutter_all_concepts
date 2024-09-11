@@ -1,4 +1,5 @@
 import 'package:all_concepts/screens/center_screen.dart';
+import 'package:all_concepts/screens/circle_avatar_screen.dart';
 import 'package:all_concepts/screens/container_screen.dart';
 import 'package:all_concepts/screens/button_screen.dart';
 import 'package:all_concepts/screens/expanded_screen.dart';
@@ -76,6 +77,13 @@ class HomeScreen extends StatelessWidget {
             'Designed to center its child widget within its parent. It takes a single child and places it in the middle of the available space, making it ideal for aligning elements like text, images, or buttons at the center of the screen or a container. It simplifies positioning without needing complex alignment calculations',
       },
       {
+        'title': 'circleAvatar',
+        'short_description':
+            'The CircleAvatar widget displays a circular image or icon, often used for profile pictures.',
+        'description':
+            'The CircleAvatar widget in Flutter is used to create a circular profile image or icon. It’s commonly used to display user avatars, allowing you to easily add an image or background color within a circular shape.',
+      },
+      {
         'title': 'container',
         'short_description':
             'A flexible layout widget that can hold a child and customize size, padding, margin, and apply decorations like color or borders.',
@@ -139,6 +147,13 @@ class HomeScreen extends StatelessWidget {
             'The Row and Column widgets in Flutter are used for arranging children widgets in a horizontal (Row) or vertical (Column) layout. Both widgets align their children along the main axis (Row: horizontal, Column: vertical) and can control spacing, alignment, and stretching of the children across the cross axis.',
       },
       {
+        'title': 'stack',
+        'short_description':
+            'The Stack widget overlays widgets, positioning them relative to each other for layered layouts.',
+        'description':
+            'The Stack widget in Flutter allows you to overlay widgets on top of each other. It positions its children relative to the edges of the Stack, making it useful for creating layered or complex UI layouts.',
+      },
+      {
         'title': 'text',
         'short_description':
             'A widget used to display styled or unstyled text on the screen, customizable with various formatting options.',
@@ -192,6 +207,15 @@ class HomeScreen extends StatelessWidget {
                         context,
                         MaterialPageRoute(
                           builder: (context) => CenterScreen(
+                            description: listWidget[index]['description'],
+                          ),
+                        ),
+                      );
+                    } else if (screen == 'circleAvatar') {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => CircleAvatarScreen(
                             description: listWidget[index]['description'],
                           ),
                         ),
