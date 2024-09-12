@@ -5,6 +5,7 @@ import 'package:all_concepts/screens/constrained_box_screen.dart';
 import 'package:all_concepts/screens/container_screen.dart';
 import 'package:all_concepts/screens/button_screen.dart';
 import 'package:all_concepts/screens/custom_font.dart';
+import 'package:all_concepts/screens/alertdialog.dart';
 import 'package:all_concepts/screens/expanded_screen.dart';
 import 'package:all_concepts/screens/fontawesome_icon_screen.dart';
 import 'package:all_concepts/screens/gradient_screen.dart';
@@ -73,6 +74,13 @@ class HomeScreen extends StatelessWidget {
     ];
 
     List listWidget = [
+      {
+        'title': 'AlertDialog',
+        'short_description':
+            'Pop-up dialog with info or actions for user acknowledgment.',
+        'description':
+            'An AlertDialog displays a pop-up dialog with important information or actions requiring user acknowledgment. It typically contains a title, content, and action buttons like "OK" or "Cancel."',
+      },
       {
         'title': 'animation',
         'short_description':
@@ -269,7 +277,16 @@ class HomeScreen extends StatelessWidget {
                     onTap: () {
                       String screen = listWidget[index]['title'];
 
-                      if (screen == 'button') {
+                      if (screen == 'AlertDialog') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => AlertDialogScreen(
+                              description: listWidget[index]['description'],
+                            ),
+                          ),
+                        );
+                      } else if (screen == 'button') {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
