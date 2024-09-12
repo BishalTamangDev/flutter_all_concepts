@@ -9,16 +9,16 @@ class CircleAvatarScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return Scaffold(
       appBar: AppBar(
         title: const Text("Circle Avatar"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
+
         child: Padding(
           padding: Variables.getPadding(),
-          child: Column(
+          child:  Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(description),
