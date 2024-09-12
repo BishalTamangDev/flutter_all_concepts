@@ -19,6 +19,7 @@ import 'package:all_concepts/screens/margin_screen.dart';
 import 'package:all_concepts/screens/positioned_screen.dart';
 import 'package:all_concepts/screens/rich_text_screen.dart';
 import 'package:all_concepts/screens/rows_columns_screen.dart';
+import 'package:all_concepts/screens/snackbar_screen.dart';
 import 'package:all_concepts/screens/stack_screen.dart';
 import 'package:all_concepts/screens/text_screen.dart';
 import 'package:all_concepts/screens/wrap_screen.dart';
@@ -217,6 +218,12 @@ class HomeScreen extends StatelessWidget {
             'Row: Arranges widgets horizontally & Column: Arranges widgets vertically.',
         'description':
             'The Row and Column widgets in Flutter are used for arranging children widgets in a horizontal (Row) or vertical (Column) layout. Both widgets align their children along the main axis (Row: horizontal, Column: vertical) and can control spacing, alignment, and stretching of the children across the cross axis.',
+      },
+      {
+        'title': 'SnackBar',
+        'short_description': 'Shows brief messages at the screen bottom.',
+        'description':
+            'SnackBar displays a brief message at the bottom of the screen. It can have an action button and automatically disappears after a set duration.',
       },
       {
         'title': 'stack',
@@ -450,6 +457,15 @@ class HomeScreen extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => RowsColumnScreen(
+                              description: listWidget[index]['description'],
+                            ),
+                          ),
+                        );
+                      } else if (screen == 'SnackBar') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SnackBarScreen(
                               description: listWidget[index]['description'],
                             ),
                           ),
