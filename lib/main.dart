@@ -1,11 +1,11 @@
+import 'package:all_concepts/screens/alertdialog.dart';
+import 'package:all_concepts/screens/button_screen.dart';
 import 'package:all_concepts/screens/center_screen.dart';
 import 'package:all_concepts/screens/circle_avatar_screen.dart';
 import 'package:all_concepts/screens/clip_r_rect.dart';
 import 'package:all_concepts/screens/constrained_box_screen.dart';
 import 'package:all_concepts/screens/container_screen.dart';
-import 'package:all_concepts/screens/button_screen.dart';
 import 'package:all_concepts/screens/custom_font.dart';
-import 'package:all_concepts/screens/alertdialog.dart';
 import 'package:all_concepts/screens/expanded_screen.dart';
 import 'package:all_concepts/screens/fontawesome_icon_screen.dart';
 import 'package:all_concepts/screens/gradient_screen.dart';
@@ -22,6 +22,7 @@ import 'package:all_concepts/screens/rich_text_screen.dart';
 import 'package:all_concepts/screens/rows_columns_screen.dart';
 import 'package:all_concepts/screens/shared_preference_screen.dart';
 import 'package:all_concepts/screens/snackbar_screen.dart';
+import 'package:all_concepts/screens/splash_home_screen.dart';
 import 'package:all_concepts/screens/stack_screen.dart';
 import 'package:all_concepts/screens/text_screen.dart';
 import 'package:all_concepts/screens/wrap_screen.dart';
@@ -236,15 +237,24 @@ class HomeScreen extends StatelessWidget {
           'The Row and Column widgets in Flutter are used for arranging children widgets in a horizontal (Row) or vertical (Column) layout. Both widgets align their children along the main axis (Row: horizontal, Column: vertical) and can control spacing, alignment, and stretching of the children across the cross axis.',
     },
     {
-      'title' : 'SharedPreference',
-      'short_description' : 'Stores simple key-value data persistently on the device.',
-      'description' : 'SharedPreferences is used for storing small amounts of data, such as user preferences or app settings, in key-value pairs. It is ideal for saving simple data like strings, integers, and booleans locally on the device, making the data persistent across app restarts.',
+      'title': 'SharedPreference',
+      'short_description':
+          'Stores simple key-value data persistently on the device.',
+      'description':
+          'SharedPreferences is used for storing small amounts of data, such as user preferences or app settings, in key-value pairs. It is ideal for saving simple data like strings, integers, and booleans locally on the device, making the data persistent across app restarts.',
     },
     {
       'title': 'SnackBar',
       'short_description': 'Shows brief messages at the screen bottom.',
       'description':
           'SnackBar displays a brief message at the bottom of the screen. It can have an action button and automatically disappears after a set duration.',
+    },
+    {
+      'title': 'SplashScreen',
+      'short_description':
+          'Intro screen shown when the app starts, typically featuring branding or a logo.',
+      'description':
+          'A splash screen is the initial screen that appears when an app is launched. It usually displays the app\'s logo or branding while the app is loading or initializing. It\'s a brief visual element before the main content is shown.',
     },
     {
       'title': 'Stack',
@@ -517,6 +527,15 @@ class HomeScreen extends StatelessWidget {
                           context,
                           MaterialPageRoute(
                             builder: (context) => SnackBarScreen(
+                              description: listWidget[index]['description'],
+                            ),
+                          ),
+                        );
+                      } else if (screen == 'SplashScreen') {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => SplashHomeScreen(
                               description: listWidget[index]['description'],
                             ),
                           ),
