@@ -5,8 +5,10 @@ import 'package:flutter/material.dart';
 import 'inputs/checkbox_screen.dart';
 import 'inputs/date_picker_screen.dart';
 import 'inputs/dropdown_button_screen.dart';
+import 'inputs/form_screen.dart';
 import 'inputs/radio_screen.dart';
 import 'inputs/range_slider_screen.dart';
+import 'inputs/slider_screen.dart';
 import 'inputs/switch_screen.dart';
 import 'inputs/time_picker_screen.dart';
 
@@ -50,12 +52,6 @@ class InputScreen extends StatelessWidget {
       'description':
           'Enables users to select a range between two values, providing two thumbs to move along the slider track.',
       'short_description': 'Range selection slider.'
-    },
-    {
-      'title': 'SignaturePad',
-      'description':
-          'A widget used for capturing handwritten input such as signatures.',
-      'short_description': 'Handwriting input capture.'
     },
     {
       'title': 'Slider',
@@ -114,27 +110,39 @@ class InputScreen extends StatelessWidget {
                             MaterialPageRoute(
                               builder: (context) => CheckboxScreen(
                                 description: arrInputWidgets[index]
-                                ['description'],
+                                    ['description'],
                               ),
                             ),
                           );
-                        } else if (arrInputWidgets[index]['title'] == 'DatePicker') {
+                        } else if (arrInputWidgets[index]['title'] ==
+                            'DatePicker') {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context) => DatePickerScreen(
                                 description: arrInputWidgets[index]
-                                ['description'],
+                                    ['description'],
                               ),
                             ),
                           );
-                        } else if (arrInputWidgets[index]['title'] == 'DropdownButton') {
+                        } else if (arrInputWidgets[index]['title'] ==
+                            'DropdownButton') {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context) => DropdownButtonScreen(
                                 description: arrInputWidgets[index]
-                                ['description'],
+                                    ['description'],
+                              ),
+                            ),
+                          );
+                        } else if (arrInputWidgets[index]['title'] == 'Form') {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => FormScreen(
+                                description: arrInputWidgets[index]
+                                    ['description'],
                               ),
                             ),
                           );
@@ -144,31 +152,45 @@ class InputScreen extends StatelessWidget {
                             MaterialPageRoute(
                               builder: (context) => RadioScreen(
                                 description: arrInputWidgets[index]
-                                ['description'],
+                                    ['description'],
                               ),
                             ),
                           );
-                        } else if (arrInputWidgets[index]['title'] == 'RangeSlider') {
+                        } else if (arrInputWidgets[index]['title'] ==
+                            'RangeSlider') {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context) => RangeSliderScreen(
                                 description: arrInputWidgets[index]
-                                ['description'],
+                                    ['description'],
                               ),
                             ),
                           );
-                        } else if (arrInputWidgets[index]['title'] == 'Switch') {
+                        } else if (arrInputWidgets[index]['title'] ==
+                            'Slider') {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SliderScreen(
+                                description: arrInputWidgets[index]
+                                    ['description'],
+                              ),
+                            ),
+                          );
+                        } else if (arrInputWidgets[index]['title'] ==
+                            'Switch') {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context) => SwitchScreen(
                                 description: arrInputWidgets[index]
-                                ['description'],
+                                    ['description'],
                               ),
                             ),
                           );
-                        } else if (arrInputWidgets[index]['title'] == 'TextField') {
+                        } else if (arrInputWidgets[index]['title'] ==
+                            'TextField') {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
@@ -178,13 +200,14 @@ class InputScreen extends StatelessWidget {
                               ),
                             ),
                           );
-                        } else if (arrInputWidgets[index]['title'] == 'TimePicker') {
+                        } else if (arrInputWidgets[index]['title'] ==
+                            'TimePicker') {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
                               builder: (context) => TimePickerScreen(
                                 description: arrInputWidgets[index]
-                                ['description'],
+                                    ['description'],
                               ),
                             ),
                           );

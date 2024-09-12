@@ -28,7 +28,6 @@ class _DropdownButtonState extends State<DropdownButtonScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // simple input
               const SizedBox(height: 16.0),
               Text(widget.description),
               const SizedBox(height: 20.0),
