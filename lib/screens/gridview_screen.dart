@@ -1,12 +1,12 @@
 import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
+import '../variables/friend_list.dart';
+
 class GridViewScreen extends StatelessWidget {
-  const GridViewScreen(
-      {super.key, this.description = "Empty!", required this.arrFriend});
+  const GridViewScreen({super.key, this.description = "Empty!"});
 
   final String description;
-  final List arrFriend;
 
   @override
   Widget build(BuildContext context) {
@@ -71,25 +71,13 @@ class GridViewCount extends StatelessWidget {
       crossAxisCount: 3,
       physics: const NeverScrollableScrollPhysics(),
       children: [
-        Container(
-          height: 150,
-          color: Colors.grey.shade200,
-          child: Center(
-            child: Text(arrFriend[0]),
-          ),
-        ),
-        Container(
-          height: 150,
-          color: Colors.grey.shade300,
-          child: Center(
-            child: Text(arrFriend[1]),
-          ),
-        ),
-        Container(
-          height: 150,
-          color: Colors.grey.shade400,
-          child: Center(
-            child: Text(arrFriend[2]),
+        ...arrFriend.map(
+          (e) => Container(
+            height: 150,
+            color: Colors.grey.shade200,
+            child: Center(
+              child: Text(e),
+            ),
           ),
         ),
       ],
@@ -112,21 +100,11 @@ class GridViewExtent extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       maxCrossAxisExtent: 160,
       children: [
-        Container(
-          height: 140,
-          color: Colors.grey.shade300,
-        ),
-        Container(
-          height: 140,
-          color: Colors.grey.shade400,
-        ),
-        Container(
-          height: 140,
-          color: Colors.grey.shade500,
-        ),
-        Container(
-          height: 140,
-          color: Colors.grey.shade600,
+        ...arrFriend.map(
+          (e) => Container(
+            height: 140,
+            color: Colors.grey.shade300,
+          ),
         ),
       ],
     );
