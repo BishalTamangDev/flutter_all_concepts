@@ -23,6 +23,7 @@ import 'package:all_concepts/screens/positioned_screen.dart';
 import 'package:all_concepts/screens/rich_text_screen.dart';
 import 'package:all_concepts/screens/rows_columns_screen.dart';
 import 'package:all_concepts/screens/shared_preference_screen.dart';
+import 'package:all_concepts/screens/sliver_app_bar_screen.dart';
 import 'package:all_concepts/screens/snackbar_screen.dart';
 import 'package:all_concepts/screens/splash_home_screen.dart';
 import 'package:all_concepts/screens/stack_screen.dart';
@@ -40,7 +41,7 @@ final GoRouter _router = GoRouter(
     GoRoute(
       path: '/',
       name: 'home',
-      builder: (context, state) => HomeScreen(),
+      builder: (context, state) => const HomeScreen(),
     ),
     GoRoute(
       path: '/alertDialog/:description',
@@ -283,6 +284,15 @@ final GoRouter _router = GoRouter(
       },
     ),
     GoRoute(
+      path: '/sliverAppBar/:description',
+      name: 'sliverAppBar',
+      builder: (context, state) {
+        final String description =
+            state.pathParameters['description'] ?? 'Empty!';
+        return SliverAppBarScreen(description: description);
+      },
+    ),
+    GoRoute(
       path: '/snackBar/:description',
       name: 'snackBar',
       builder: (context, state) {
@@ -360,7 +370,7 @@ class AllConceptApp extends StatelessWidget {
       title: 'All Concept Application',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blueGrey,
+        primarySwatch: Colors.pink,
         useMaterial3: false,
         textTheme: const TextTheme(
           headlineLarge: TextStyle(
@@ -534,6 +544,11 @@ class HomeScreen extends StatelessWidget {
                         context.pushNamed('sharedPreference', pathParameters: {
                           'description':
                               listWidget[index]['description'].toString()
+                        });
+                      } else if (screen == 'SliverAppBar') {
+                        context.pushNamed('sliverAppBar', pathParameters: {
+                          'description':
+                          listWidget[index]['description'].toString()
                         });
                       } else if (screen == 'SnackBar') {
                         context.pushNamed('snackBar', pathParameters: {
