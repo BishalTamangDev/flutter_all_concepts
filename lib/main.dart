@@ -7,6 +7,7 @@ import 'package:all_concepts/screens/clip_r_rect.dart';
 import 'package:all_concepts/screens/constrained_box_screen.dart';
 import 'package:all_concepts/screens/container_screen.dart';
 import 'package:all_concepts/screens/custom_font.dart';
+import 'package:all_concepts/screens/drawer_screen.dart';
 import 'package:all_concepts/screens/expanded_screen.dart';
 import 'package:all_concepts/screens/fontawesome_icon_screen.dart';
 import 'package:all_concepts/screens/gradient_screen.dart';
@@ -128,6 +129,15 @@ final GoRouter _router = GoRouter(
         final String description =
             state.pathParameters['description'] ?? 'Empty!';
         return CustomFontScreen(description: description);
+      },
+    ),
+    GoRoute(
+      path: '/drawer/:description',
+      name: 'drawer',
+      builder: (context, state) {
+        final String description =
+            state.pathParameters['description'] ?? 'Empty!';
+        return DrawerScreen(description: description);
       },
     ),
     GoRoute(
@@ -444,6 +454,11 @@ class HomeScreen extends StatelessWidget {
                         context.pushNamed('customFont', pathParameters: {
                           'description':
                               listWidget[index]['description'].toString()
+                        });
+                      } else if (screen == 'Drawer') {
+                        context.pushNamed('drawer', pathParameters: {
+                          'description':
+                          listWidget[index]['description'].toString()
                         });
                       } else if (screen == 'Expanded') {
                         context.pushNamed('expanded', pathParameters: {
