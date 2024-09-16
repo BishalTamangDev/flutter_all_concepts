@@ -1,6 +1,8 @@
 import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/appbar_widget.dart';
+
 class ExpandedScreen extends StatelessWidget {
   const ExpandedScreen({super.key, this.description = 'Empty!'});
 
@@ -9,16 +11,18 @@ class ExpandedScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Expanded"),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: "Expanded"),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getPadding(),
           child: Column(
             children: [
-              Text(description),
+              Text(
+                description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(height: 20.0),
               Row(
                 children: [

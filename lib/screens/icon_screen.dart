@@ -1,6 +1,8 @@
 import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/appbar_widget.dart';
+
 class IconScreen extends StatelessWidget {
   const IconScreen({super.key, this.description = 'Empty!'});
 
@@ -9,24 +11,29 @@ class IconScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Icon"),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: "Icon"),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getPadding(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(description),
+              Text(
+                description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(height: 20.0),
-              const Icon(Icons.verified_user),
+              Icon(
+                Icons.verified_user,
+                color: Theme.of(context).colorScheme.onSurface,
+              ),
               const SizedBox(height: 10.0),
-              const Icon(
+              Icon(
                 Icons.verified_user,
                 size: 32.0,
-                color: Colors.blueGrey,
+                color: Theme.of(context).colorScheme.onSurface,
               ),
             ],
           ),

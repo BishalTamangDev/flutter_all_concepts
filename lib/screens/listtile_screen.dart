@@ -1,21 +1,18 @@
 import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
+import '../variables/friend_list.dart';
+import '../widgets/appbar_widget.dart';
+
 class ListTileScreen extends StatelessWidget {
-  const ListTileScreen(
-      {super.key, this.description = "Empty!", required this.arrFriend});
+  const ListTileScreen({super.key, this.description = "Empty!"});
 
   final String description;
-
-  final List arrFriend;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("ListTile"),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: "ListTile"),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getPadding(),

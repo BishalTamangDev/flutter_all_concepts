@@ -1,6 +1,8 @@
 import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
+import '../../widgets/appbar_widget.dart';
+
 class DropdownButtonScreen extends StatefulWidget {
   const DropdownButtonScreen({super.key, this.description = "Empty!"});
 
@@ -18,10 +20,7 @@ class _DropdownButtonState extends State<DropdownButtonScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("DropdownButton"),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: "DropdownButton"),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getLeftRightPadding(),
@@ -29,12 +28,22 @@ class _DropdownButtonState extends State<DropdownButtonScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               const SizedBox(height: 16.0),
-              Text(widget.description),
+              Text(
+                widget.description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(height: 20.0),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const Text('Select your faculty'),
+                  Text(
+                    'Select your faculty',
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.onSurface,
+                    ),
+                  ),
                   DropdownButton(
                     value: dropdownValue,
                     items: const [
@@ -61,12 +70,14 @@ class _DropdownButtonState extends State<DropdownButtonScreen> {
                 ],
               ),
               const SizedBox(height: 20.0),
-
               if (submitted == true)
-                Text("Selected faculty : ${dropdownValue.toString()}"),
-
+                Text(
+                  "Selected faculty : ${dropdownValue.toString()}",
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
+                ),
               const SizedBox(height: 20.0),
-
               ElevatedButton(
                 onPressed: () {
                   submitted = true;

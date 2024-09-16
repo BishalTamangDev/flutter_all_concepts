@@ -1,6 +1,8 @@
 import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
+import '../../widgets/appbar_widget.dart';
+
 class DatePickerScreen extends StatefulWidget {
   const DatePickerScreen({super.key, this.description = "Empty!"});
 
@@ -30,10 +32,7 @@ class _DatePickerState extends State<DatePickerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("DatePicker"),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: "DatePicker"),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getLeftRightPadding(),
@@ -42,10 +41,19 @@ class _DatePickerState extends State<DatePickerScreen> {
             children: [
               // simple input
               const SizedBox(height: 16.0),
-              Text(widget.description),
+              Text(
+                widget.description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(height: 10.0),
               Text(
-                  "Selected date : ${appointmentDate != null ? "${appointmentDateYear.toString()}:${appointmentDateMonth.toString()}:${appointmentDateDay.toString()}" : "-"}"),
+                "Selected date : ${appointmentDate != null ? "${appointmentDateYear.toString()}:${appointmentDateMonth.toString()}:${appointmentDateDay.toString()}" : "-"}",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(height: 10.0),
               Row(
                 children: [

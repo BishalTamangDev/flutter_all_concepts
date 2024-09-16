@@ -1,6 +1,7 @@
 import 'package:all_concepts/variables/variables.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/appbar_widget.dart';
 
 class RichTextScreen extends StatelessWidget {
   const RichTextScreen({super.key, this.description = "Empty!"});
@@ -10,34 +11,41 @@ class RichTextScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("RichText"),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: "RichText"),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getPadding(),
           child: Column(
             children: [
-              Text(description),
+              Text(
+                description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               // text button
               const SizedBox(
                 height: 20.0,
               ),
 
               RichText(
-                text: const TextSpan(
+                text: TextSpan(
                   style: TextStyle(
-                    color: Colors.black,
+                    color: Theme.of(context).colorScheme.onSurface,
                     fontSize: 18.0,
                   ),
                   children: <TextSpan>[
-                    TextSpan(text: "Rich"),
+                    TextSpan(
+                      text: "Rich",
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.onSurface,
+                      ),
+                    ),
                     TextSpan(
                       text: "Text",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-                        color: Colors.blue,
+                        color: Theme.of(context).colorScheme.primary,
                       ),
                     ),
                   ],

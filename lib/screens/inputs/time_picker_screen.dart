@@ -1,6 +1,8 @@
 import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
+import '../../widgets/appbar_widget.dart';
+
 class TimePickerScreen extends StatefulWidget {
   const TimePickerScreen({super.key, this.description = "Empty!"});
 
@@ -28,10 +30,7 @@ class _TimePickerState extends State<TimePickerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("TimePicker"),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: "TimePicker"),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getLeftRightPadding(),
@@ -40,10 +39,19 @@ class _TimePickerState extends State<TimePickerScreen> {
             children: [
               // simple input
               const SizedBox(height: 16.0),
-              Text(widget.description),
+              Text(
+                widget.description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(height: 10.0),
               Text(
-                  "Selected Time : ${appointmentTime != null ? "${appointmentTimeHour.toString()}:${appointmentTimeMinute.toString()}" : "-"}"),
+                "Selected Time : ${appointmentTime != null ? "${appointmentTimeHour.toString()}:${appointmentTimeMinute.toString()}" : "-"}",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(height: 10.0),
               Row(
                 children: [

@@ -1,6 +1,8 @@
 import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/appbar_widget.dart';
+
 class TextScreen extends StatelessWidget {
   const TextScreen({super.key, this.description = 'Empty!'});
 
@@ -9,16 +11,18 @@ class TextScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text("Text"),
-      ),
+      appBar: const AppBarWidget(title: "Text"),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getPadding(),
           child: Column(
             children: [
-              Text(description),
+              Text(
+                description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(height: 10),
 
               // simple text widget

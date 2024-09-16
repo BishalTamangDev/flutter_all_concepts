@@ -29,6 +29,7 @@ import 'package:all_concepts/screens/splash_home_screen.dart';
 import 'package:all_concepts/screens/stack_screen.dart';
 import 'package:all_concepts/screens/text_screen.dart';
 import 'package:all_concepts/screens/wrap_screen.dart';
+import 'package:all_concepts/theme/theme.dart';
 import 'package:all_concepts/variables/variables.dart';
 import 'package:all_concepts/variables/widget_list.dart';
 import 'package:flutter/material.dart';
@@ -65,7 +66,8 @@ final GoRouter _router = GoRouter(
       path: '/bottomSheet/:description',
       name: 'bottomSheet',
       builder: (context, state) {
-        final String description = state.pathParameters['description'] ?? "Empty!";
+        final String description =
+            state.pathParameters['description'] ?? "Empty!";
         return BottomSheetScreen(description: description);
       },
     ),
@@ -232,10 +234,7 @@ final GoRouter _router = GoRouter(
       builder: (context, state) {
         final String description =
             state.pathParameters['description'] ?? 'Empty!';
-        return ListTileScreen(
-          description: description,
-          arrFriend: const [],
-        );
+        return ListTileScreen(description: description);
       },
     ),
     GoRoute(
@@ -369,20 +368,8 @@ class AllConceptApp extends StatelessWidget {
       routerConfig: _router,
       title: 'All Concept Application',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: Colors.pink,
-        useMaterial3: false,
-        textTheme: const TextTheme(
-          headlineLarge: TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 20,
-          ),
-          bodyMedium: TextStyle(
-            fontSize: 18,
-            color: Colors.black54,
-          ),
-        ),
-      ),
+      theme: lightTheme,
+      darkTheme: darkTheme,
     );
   }
 }
@@ -395,7 +382,13 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: const Text("Widgets"),
+        title: Text(
+          "Widgets",
+          style: TextStyle(
+            color: Theme.of(context).colorScheme.onPrimary,
+          ),
+        ),
+        backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       body: Container(
         color: Variables.getBgColor(),
@@ -422,7 +415,7 @@ class HomeScreen extends StatelessWidget {
                       } else if (screen == 'BottomSheet') {
                         context.pushNamed('bottomSheet', pathParameters: {
                           'description':
-                          listWidget[index]['description'].toString()
+                              listWidget[index]['description'].toString()
                         });
                       } else if (screen == 'BottomNavigationBar') {
                         context.pushNamed('bottomNavigationBar',
@@ -468,7 +461,7 @@ class HomeScreen extends StatelessWidget {
                       } else if (screen == 'Drawer') {
                         context.pushNamed('drawer', pathParameters: {
                           'description':
-                          listWidget[index]['description'].toString()
+                              listWidget[index]['description'].toString()
                         });
                       } else if (screen == 'Expanded') {
                         context.pushNamed('expanded', pathParameters: {
@@ -548,7 +541,7 @@ class HomeScreen extends StatelessWidget {
                       } else if (screen == 'SliverAppBar') {
                         context.pushNamed('sliverAppBar', pathParameters: {
                           'description':
-                          listWidget[index]['description'].toString()
+                              listWidget[index]['description'].toString()
                         });
                       } else if (screen == 'SnackBar') {
                         context.pushNamed('snackBar', pathParameters: {
@@ -589,13 +582,16 @@ class HomeScreen extends StatelessWidget {
                         top: 5.0,
                         bottom: 5.0,
                       ),
-                      child: Text(
-                        listWidget[index]['short_description'],
+                      child: Opacity(
+                        opacity: 0.7,
+                        child: Text(
+                          listWidget[index]['short_description'],
+                        ),
                       ),
                     ),
-                    trailing: const Icon(
+                    trailing: Icon(
                       Icons.arrow_right,
-                      color: Colors.blueGrey,
+                      color: Theme.of(context).colorScheme.primary,
                     ),
                   ),
                 );

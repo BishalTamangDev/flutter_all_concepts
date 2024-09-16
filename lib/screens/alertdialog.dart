@@ -1,6 +1,8 @@
 import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/appbar_widget.dart';
+
 class AlertDialogScreen extends StatefulWidget {
   const AlertDialogScreen({super.key, this.description = "Empty!"});
 
@@ -14,9 +16,8 @@ class _AlertDialogState extends State<AlertDialogScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('AlertDialog'),
-        centerTitle: true,
+      appBar: const AppBarWidget(
+        title: "AlertDialog",
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -24,9 +25,17 @@ class _AlertDialogState extends State<AlertDialogScreen> {
           child: Column(
             children: [
               const SizedBox(height: 16.0),
-              Text(widget.description),
+              Text(
+                widget.description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(height: 20.0),
               ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Theme.of(context).colorScheme.primary,
+                ),
                 onPressed: () {
                   showDialog(
                     context: context,

@@ -2,6 +2,7 @@ import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
 import '../variables/friend_list.dart';
+import '../widgets/appbar_widget.dart';
 
 class GridViewScreen extends StatelessWidget {
   const GridViewScreen({super.key, this.description = "Empty!"});
@@ -11,40 +12,48 @@ class GridViewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("GridView"),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: "GridView"),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getPadding(),
           child: Column(
             children: [
-              Text(description),
+              Text(
+                description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(height: 20),
 
               // gridview :: count
-              const Text(
+              Text(
                 "Grid View With Fixed Cross Axis Count : GridView.count",
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
               ),
               const SizedBox(height: 10),
               GridViewCount(arrFriend: arrFriend),
               const SizedBox(height: 20),
 
               // gridview :: extent
-              const Text(
+              Text(
                 "Grid View With Fixed Width : GridView.extent",
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
               ),
               const SizedBox(height: 10),
               GridViewExtent(arrFriend: arrFriend),
               const SizedBox(height: 20),
 
               // gridview :: builder
-              const Text(
+              Text(
                 "Grid View Builder : GridView.builder",
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
               ),
               const SizedBox(height: 10),
               GridViewBuilder(arrFriend: arrFriend),
@@ -76,7 +85,12 @@ class GridViewCount extends StatelessWidget {
             height: 150,
             color: Colors.grey.shade200,
             child: Center(
-              child: Text(e),
+              child: Text(
+                e,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onInverseSurface,
+                ),
+              ),
             ),
           ),
         ),

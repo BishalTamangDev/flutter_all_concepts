@@ -2,6 +2,7 @@ import 'package:all_concepts/screens/inputs/text_field_screen.dart';
 import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/appbar_widget.dart';
 import 'inputs/checkbox_screen.dart';
 import 'inputs/date_picker_screen.dart';
 import 'inputs/dropdown_button_screen.dart';
@@ -81,17 +82,19 @@ class InputScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Inputs"),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: "Inputs"),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getLeftRightPadding(),
           child: Column(
             children: [
               const SizedBox(height: 16.0),
-              Text(description),
+              Text(
+                description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(height: 10.0),
               ListView.builder(
                 shrinkWrap: true,

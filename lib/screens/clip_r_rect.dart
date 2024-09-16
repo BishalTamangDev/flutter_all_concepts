@@ -1,6 +1,7 @@
 import 'package:all_concepts/variables/variables.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/appbar_widget.dart';
 
 class ClipRRectScreen extends StatelessWidget {
   const ClipRRectScreen({super.key, this.description = "Empty!"});
@@ -10,16 +11,18 @@ class ClipRRectScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('ClipRRect'),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: 'ClipRRect'),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getPadding(),
           child: Column(
             children: [
-              Text(description),
+              Text(
+                description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               // text button
               const SizedBox(
                 height: 20.0,

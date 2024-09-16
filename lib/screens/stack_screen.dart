@@ -1,6 +1,8 @@
 import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/appbar_widget.dart';
+
 class StackScreen extends StatelessWidget {
   const StackScreen({super.key, this.description = "Empty!"});
 
@@ -9,17 +11,19 @@ class StackScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Stack Screen"),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: "Stack Screen"),
       body: SingleChildScrollView(
         physics: const NeverScrollableScrollPhysics(),
         child: Padding(
           padding: Variables.getPadding(),
           child: Column(
             children: [
-              Text(description),
+              Text(
+                description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               // text button
               const SizedBox(
                 height: 20.0,

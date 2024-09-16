@@ -1,6 +1,8 @@
 import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
+import '../../widgets/appbar_widget.dart';
+
 class RangeSliderScreen extends StatefulWidget {
   const RangeSliderScreen({super.key, this.description = "Empty!"});
 
@@ -22,10 +24,7 @@ class _RangeSliderState extends State<RangeSliderScreen> {
       rangeValues.end.toString(),
     );
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("RangeSlider"),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: "RangeSlider"),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getLeftRightPadding(),
@@ -33,10 +32,20 @@ class _RangeSliderState extends State<RangeSliderScreen> {
             children: [
               // simple input
               const SizedBox(height: 16.0),
-              Text(widget.description),
+              Text(
+                widget.description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(height: 20.0),
 
-              Text("Selected range : $minRange - $maxRange"),
+              Text(
+                "Selected range : $minRange - $maxRange",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
 
               const SizedBox(height: 10.0),
 
@@ -63,7 +72,12 @@ class _RangeSliderState extends State<RangeSliderScreen> {
                     maxRange = rangeValues.end.toInt();
                   });
                 },
-                child: const Text("Set Range"),
+                child: Text(
+                  "Set Range",
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
+                ),
               ),
             ],
           ),

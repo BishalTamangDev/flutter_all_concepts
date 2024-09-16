@@ -22,9 +22,14 @@ class _SplashScreenOneState extends State<SplashScreenOne> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Center(
-        child: Text("SplashScreen"),
+        child: Text(
+          "SplashScreen",
+          style: TextStyle(
+            color: Theme.of(context).colorScheme.onSurface,
+          ),
+        ),
       ),
     );
   }

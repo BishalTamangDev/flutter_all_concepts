@@ -1,6 +1,7 @@
 import 'package:all_concepts/variables/variables.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/appbar_widget.dart';
 
 class InkwellScreen extends StatelessWidget {
   const InkwellScreen({super.key, this.description = 'Empty!'});
@@ -10,16 +11,18 @@ class InkwellScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Inkwell"),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: "Inkwell"),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getPadding(),
           child: Column(
             children: [
-              Text(description),
+              Text(
+                description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               // const SizedBox(height: 20.0),
 
               const SizedBox(height: 20.0),
@@ -41,7 +44,12 @@ class InkwellScreen extends StatelessWidget {
                 onTap: () {
                   print('Clicked on inkwell-text!');
                 },
-                child: const Text('InkWell Text'),
+                child: Text(
+                  'InkWell Text',
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
+                ),
               ),
             ],
           ),

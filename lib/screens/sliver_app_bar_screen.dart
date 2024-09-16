@@ -11,18 +11,18 @@ class SliverAppBarScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
+            backgroundColor: Theme.of(context).colorScheme.primary,
             expandedHeight: 300,
             floating: false,
             pinned: true,
             flexibleSpace: FlexibleSpaceBar(
               background: Container(
-                color: Colors.pink,
+                color: Theme.of(context).colorScheme.primary,
               ),
               title: const Text("SliverAppBar"),
               centerTitle: true,
             ),
           ),
-
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
@@ -32,7 +32,6 @@ class SliverAppBarScreen extends StatelessWidget {
               ),
             ),
           ),
-
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
@@ -42,7 +41,42 @@ class SliverAppBarScreen extends StatelessWidget {
               ),
             ),
           ),
-
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Container(
+                height: 200,
+                color: Colors.grey.shade200,
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Container(
+                height: 200,
+                color: Colors.grey.shade300,
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Container(
+                height: 200,
+                color: Colors.grey.shade200,
+              ),
+            ),
+          ),
+          SliverToBoxAdapter(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Container(
+                height: 200,
+                color: Colors.grey.shade300,
+              ),
+            ),
+          ),
           SliverToBoxAdapter(
             child: Padding(
               padding: const EdgeInsets.all(16.0),

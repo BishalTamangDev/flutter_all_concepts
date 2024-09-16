@@ -12,7 +12,7 @@ class DrawerScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Drawer"),
-        centerTitle: true,
+        backgroundColor: Theme.of(context).colorScheme.primary,
       ),
       endDrawer: Drawer(
         child: Column(
@@ -20,8 +20,8 @@ class DrawerScreen extends StatelessWidget {
             SizedBox(
               width: double.infinity,
               child: DrawerHeader(
-                decoration:
-                    BoxDecoration(color: Theme.of(context).primaryColor),
+                decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.primary),
                 child: const Center(
                   child: Icon(
                     Icons.home,
@@ -30,7 +30,12 @@ class DrawerScreen extends StatelessWidget {
                 ),
               ),
             ),
-            const Text("Hello!"),
+            Text(
+              "Hello!",
+              style: TextStyle(
+                color: Theme.of(context).colorScheme.onSurface,
+              ),
+            ),
           ],
         ),
       ),
@@ -40,7 +45,12 @@ class DrawerScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(description),
+              Text(
+                description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
 
               // text button
               const SizedBox(height: 20.0),

@@ -2,6 +2,7 @@ import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
 import '../variables/friend_list.dart';
+import '../widgets/appbar_widget.dart';
 
 class ListViewScreen extends StatelessWidget {
   const ListViewScreen({super.key, this.description = 'Empty!'});
@@ -11,26 +12,29 @@ class ListViewScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("ListView Screen"),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: "ListView Screen"),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getPadding(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(description),
+              Text(
+                description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(height: 20.0),
 
               // horizontal list view
-              const Center(
+              Center(
                 child: Text(
                   "Horizontal List View",
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w500,
+                    color: Theme.of(context).colorScheme.onSurface,
                   ),
                 ),
               ),
@@ -80,7 +84,11 @@ class HorizontalListView extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
                 child: Text(
-                    '${arrFriend[index][0].toUpperCase() + arrFriend[index].substring(1)}'),
+                  '${arrFriend[index][0].toUpperCase() + arrFriend[index].substring(1)}',
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
+                ),
               ),
             );
           },
@@ -98,20 +106,26 @@ class SimpleListView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (arrFriend.isEmpty) {
-      return const Center(
-        child: Text("Simple list view is empty!"),
+      return Center(
+        child: Text(
+          "Simple list view is empty!",
+          style: TextStyle(
+            color: Theme.of(context).colorScheme.onSurface,
+          ),
+        ),
       );
     } else {
       return ListView(
         physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         children: [
-          const Center(
+          Center(
             child: Text(
               "Simple List View",
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w500,
+                color: Theme.of(context).colorScheme.onSurface,
               ),
             ),
           ),
@@ -120,35 +134,54 @@ class SimpleListView extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Text(
-                  'Hello, ${arrFriend[0][0].toUpperCase() + arrFriend[0].substring(1)}!'),
+                'Hello, ${arrFriend[0][0].toUpperCase() + arrFriend[0].substring(1)}!',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
+            ),
+          ),
+          Card(
+            child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Text(
+                  'Hello, ${arrFriend[1][0].toUpperCase() + arrFriend[1].substring(1)}!',
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
+                )),
+          ),
+          Card(
+            child: Padding(
+              padding: const EdgeInsets.all(16.0),
+              child: Text(
+                'Hello, ${arrFriend[2][0].toUpperCase() + arrFriend[2].substring(1)}!',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
             ),
           ),
           Card(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Text(
-                  'Hello, ${arrFriend[1][0].toUpperCase() + arrFriend[1].substring(1)}!'),
+                'Hello, ${arrFriend[3][0].toUpperCase() + arrFriend[3].substring(1)}!',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
             ),
           ),
           Card(
             child: Padding(
               padding: const EdgeInsets.all(16.0),
               child: Text(
-                  'Hello, ${arrFriend[2][0].toUpperCase() + arrFriend[2].substring(1)}!'),
-            ),
-          ),
-          Card(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Text(
-                  'Hello, ${arrFriend[3][0].toUpperCase() + arrFriend[3].substring(1)}!'),
-            ),
-          ),
-          Card(
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Text(
-                  'Hello, ${arrFriend[3][0].toUpperCase() + arrFriend[0].substring(1)}!'),
+                'Hello, ${arrFriend[3][0].toUpperCase() + arrFriend[0].substring(1)}!',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
             ),
           ),
         ],
@@ -168,12 +201,13 @@ class BuilderListView extends StatelessWidget {
       physics: const NeverScrollableScrollPhysics(),
       shrinkWrap: true,
       children: [
-        const Center(
+        Center(
           child: Text(
             "Builder List View",
             style: TextStyle(
               fontSize: 24,
               fontWeight: FontWeight.w500,
+              color: Theme.of(context).colorScheme.onSurface,
             ),
           ),
         ),
@@ -183,7 +217,12 @@ class BuilderListView extends StatelessWidget {
             return Card(
               child: Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Text(arrFriend[index]),
+                child: Text(
+                  arrFriend[index],
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
+                ),
               ),
             );
           },
@@ -212,12 +251,13 @@ class SeparatedListView extends StatelessWidget {
         physics: const NeverScrollableScrollPhysics(),
         shrinkWrap: true,
         children: [
-          const Center(
+          Center(
             child: Text(
               "Separated List View",
               style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.w500,
+                color: Theme.of(context).colorScheme.onSurface,
               ),
             ),
           ),
@@ -226,7 +266,12 @@ class SeparatedListView extends StatelessWidget {
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.all(16.0),
-                child: Text(arrFriend[index]),
+                child: Text(
+                  arrFriend[index],
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
+                ),
               );
             },
             separatorBuilder: (context, index) {

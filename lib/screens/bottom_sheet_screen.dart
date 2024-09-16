@@ -1,6 +1,8 @@
 import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/appbar_widget.dart';
+
 class BottomSheetScreen extends StatefulWidget {
   const BottomSheetScreen({super.key, this.description = 'Empty!'});
 
@@ -14,17 +16,19 @@ class _BottomSheetState extends State<BottomSheetScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("BottomSheet"),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: "BottomSheet"),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getPadding(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(widget.description),
+              Text(
+                widget.description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               // text button
               const SizedBox(height: 20.0),
 
@@ -40,8 +44,14 @@ class _BottomSheetState extends State<BottomSheetScreen> {
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
-                                const Text(
-                                    "Bottom sheet contents appears here."),
+                                Text(
+                                  "Bottom sheet contents appears here.",
+                                  style: TextStyle(
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onSurface,
+                                  ),
+                                ),
                                 const SizedBox(height: 10.0),
                                 ElevatedButton(
                                   onPressed: () {

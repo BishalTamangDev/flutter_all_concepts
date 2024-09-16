@@ -1,4 +1,5 @@
 import 'package:all_concepts/variables/variables.dart';
+import 'package:all_concepts/widgets/appbar_widget.dart';
 import 'package:flutter/material.dart';
 
 class BottomNavigationBarScreen extends StatefulWidget {
@@ -21,17 +22,19 @@ class _BottomNavigationBarState extends State<BottomNavigationBarScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("BottomNavigationBar"),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: "BottomNavigationBar"),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getLeftRightPadding(),
           child: Column(
             children: [
               const SizedBox(height: 16.0),
-              Text(widget.description),
+              Text(
+                widget.description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(height: 10.0),
               body[_currentIndex],
             ],

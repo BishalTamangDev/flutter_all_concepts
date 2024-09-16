@@ -1,6 +1,8 @@
 import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/appbar_widget.dart';
+
 class SnackBarScreen extends StatefulWidget {
   const SnackBarScreen({super.key, this.description = "Empty!"});
 
@@ -14,17 +16,19 @@ class _SnackBarState extends State<SnackBarScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('SnackBar'),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: 'SnackBar'),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getLeftRightPadding(),
           child: Column(
             children: [
               const SizedBox(height: 16.0),
-              Text(widget.description),
+              Text(
+                widget.description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(height: 20.0),
               ElevatedButton(
                 onPressed: () {
@@ -33,9 +37,12 @@ class _SnackBarState extends State<SnackBarScreen> {
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(11.0),
                       ),
-                      content: const Text("This is the SnackBar message."),
+                      content: Text("This is the SnackBar message.",
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.onSurface,
+                        ),),
                       behavior: SnackBarBehavior.floating,
-                      backgroundColor: Colors.blueGrey,
+                      backgroundColor: Theme.of(context).colorScheme.primary,
                       action: SnackBarAction(
                         label: 'Undo',
                         onPressed: () {},

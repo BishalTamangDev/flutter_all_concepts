@@ -1,6 +1,7 @@
 import 'package:all_concepts/variables/variables.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/appbar_widget.dart';
 
 class GradientScreen extends StatelessWidget {
   const GradientScreen({super.key, this.description = "Empty!"});
@@ -10,16 +11,18 @@ class GradientScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Gradient"),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: "Gradient"),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getPadding(),
           child: Column(
             children: [
-              Text(description),
+              Text(
+                description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               // text button
               const SizedBox(
                 height: 20.0,
@@ -29,17 +32,23 @@ class GradientScreen extends StatelessWidget {
                 height: 200,
                 decoration: const BoxDecoration(
                   gradient: LinearGradient(
-                      colors: [
-                        Color(0xff30cfd0),
-                        Color(0xff330867),
-                      ],
-                      begin: FractionalOffset(0.0, 0.0),
-                      end: FractionalOffset(1.0, 1.0)),
+                    colors: [
+                      Color(0xff30cfd0),
+                      Color(0xff330867),
+                    ],
+                    begin: FractionalOffset(0.0, 0.0),
+                    end: FractionalOffset(1.0, 1.0),
+                  ),
                 ),
               ),
 
               const SizedBox(height: 10.0),
-              const Text("Linear gradient"),
+              Text(
+                "Linear gradient",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(
                 height: 20.0,
               ),
@@ -60,7 +69,12 @@ class GradientScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 10.0),
-              const Text("Radial gradient"),
+              Text(
+                "Radial gradient",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
             ],
           ),
         ),

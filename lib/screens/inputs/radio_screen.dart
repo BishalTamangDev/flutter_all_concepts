@@ -1,6 +1,8 @@
 import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
+import '../../widgets/appbar_widget.dart';
+
 class RadioScreen extends StatefulWidget {
   const RadioScreen({super.key, this.description = "Empty!"});
 
@@ -18,10 +20,7 @@ class _RadioState extends State<RadioScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Radio"),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: "Radio"),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getLeftRightPadding(),
@@ -30,10 +29,20 @@ class _RadioState extends State<RadioScreen> {
             children: [
               // simple input
               const SizedBox(height: 16.0),
-              Text(widget.description),
+              Text(
+                widget.description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(height: 20.0),
 
-              const Text("Select your faculty."),
+              Text(
+                "Select your faculty.",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(height: 10.0),
 
               // bba
@@ -53,7 +62,12 @@ class _RadioState extends State<RadioScreen> {
                     ),
                   ),
                   const SizedBox(width: 6.0),
-                  const Text("BBA"),
+                  Text(
+                    "BBA",
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.onSurface,
+                    ),
+                  ),
                 ],
               ),
 
@@ -77,7 +91,12 @@ class _RadioState extends State<RadioScreen> {
                     ),
                   ),
                   const SizedBox(width: 6.0),
-                  const Text("BCA"),
+                  Text(
+                    "BCA",
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.onSurface,
+                    ),
+                  ),
                 ],
               ),
 
@@ -101,7 +120,12 @@ class _RadioState extends State<RadioScreen> {
                     ),
                   ),
                   const SizedBox(width: 6.0),
-                  const Text("BIT"),
+                  Text(
+                    "BIT",
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.onSurface,
+                    ),
+                  ),
                 ],
               ),
 
@@ -134,8 +158,13 @@ class _RadioState extends State<RadioScreen> {
 
               const SizedBox(height: 10.0),
 
-              if (submitted) Text("Your faculty is : $faculty"),
-
+              if (submitted)
+                Text(
+                  "Your faculty is : $faculty",
+                  style: TextStyle(
+                    color: Theme.of(context).colorScheme.onSurface,
+                  ),
+                ),
               const SizedBox(height: 10.0),
             ],
           ),

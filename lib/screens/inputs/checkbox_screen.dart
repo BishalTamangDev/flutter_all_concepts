@@ -1,6 +1,8 @@
 import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
+import '../../widgets/appbar_widget.dart';
+
 class CheckboxScreen extends StatefulWidget {
   const CheckboxScreen({super.key, this.description = "Empty!"});
 
@@ -17,10 +19,7 @@ class _CheckboxState extends State<CheckboxScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("CheckBox"),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: "CheckBox"),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getLeftRightPadding(),
@@ -29,12 +28,17 @@ class _CheckboxState extends State<CheckboxScreen> {
             children: [
               // simple input
               const SizedBox(height: 16.0),
-              Text(widget.description),
+              Text(
+                widget.description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(height: 20.0),
 
               Row(
                 children: [
-                  Container(
+                  SizedBox(
                     width: 24.0,
                     height: 24.0,
                     child: Checkbox(
@@ -47,7 +51,12 @@ class _CheckboxState extends State<CheckboxScreen> {
                         }),
                   ),
                   const SizedBox(width: 5.0),
-                  const Text("I accept all the terms & conditions."),
+                  Text(
+                    "I accept all the terms & conditions.",
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.onSurface,
+                    ),
+                  ),
                 ],
               ),
 
@@ -80,8 +89,18 @@ class _CheckboxState extends State<CheckboxScreen> {
 
               if (submitted)
                 isChecked == true
-                    ? const Text("Terms & Conditions accepted.")
-                    : const Text("Terms & Conditions not accepted."),
+                    ? Text(
+                        "Terms & Conditions accepted.",
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.onSurface,
+                        ),
+                      )
+                    : Text(
+                        "Terms & Conditions not accepted.",
+                        style: TextStyle(
+                          color: Theme.of(context).colorScheme.onSurface,
+                        ),
+                      ),
             ],
           ),
         ),

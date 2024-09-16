@@ -1,6 +1,8 @@
 import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
+import '../../widgets/appbar_widget.dart';
+
 final _formKey = GlobalKey<FormState>();
 
 class FormScreen extends StatefulWidget {
@@ -16,17 +18,19 @@ class _FormState extends State<FormScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Form"),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: "Form"),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getLeftRightPadding(),
           child: Column(
             children: [
               const SizedBox(height: 16.0),
-              Text(widget.description),
+              Text(
+                widget.description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(height: 20.0),
               Form(
                 key: _formKey,
@@ -62,8 +66,14 @@ class _FormState extends State<FormScreen> {
                       onPressed: () {
                         if (_formKey.currentState!.validate()) {
                           ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text("Great!"),
+                            SnackBar(
+                              content: Text(
+                                "Great!",
+                                style: TextStyle(
+                                  color:
+                                      Theme.of(context).colorScheme.onInverseSurface,
+                                ),
+                              ),
                             ),
                           );
                         }

@@ -1,6 +1,7 @@
 import 'package:all_concepts/variables/variables.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import '../widgets/appbar_widget.dart';
 
 class RowsColumnScreen extends StatelessWidget {
   const RowsColumnScreen({super.key, this.description = 'Empty!'});
@@ -10,16 +11,18 @@ class RowsColumnScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Row and Column'),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: 'Row and Column'),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getPadding(),
           child: Column(
             children: [
-              Text(description),
+              Text(
+                description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(height: 20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.start,
@@ -44,7 +47,12 @@ class RowsColumnScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 20),
-              const Text('Row'),
+              Text(
+                'Row',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(height: 20),
               Column(
                 children: [
@@ -68,7 +76,12 @@ class RowsColumnScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 20),
-              const Text('Column'),
+              Text(
+                'Column',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
             ],
           ),
         ),

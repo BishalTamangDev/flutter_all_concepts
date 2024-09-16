@@ -2,6 +2,8 @@ import 'package:all_concepts/screens/splash_screen_one.dart';
 import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/appbar_widget.dart';
+
 class SplashHomeScreen extends StatelessWidget {
   const SplashHomeScreen({super.key, this.description = "Empty!"});
 
@@ -10,17 +12,19 @@ class SplashHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("SplashScreen"),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: "SplashScreen"),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getBottomLeftRightPadding(),
           child: Column(
             children: [
               const SizedBox(height: 16.0),
-              Text(description),
+              Text(
+                description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(height: 20.0),
               ElevatedButton(
                 onPressed: () {

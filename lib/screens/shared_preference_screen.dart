@@ -2,6 +2,8 @@ import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
+import '../widgets/appbar_widget.dart';
+
 class SharedPreferenceScreen extends StatefulWidget {
   const SharedPreferenceScreen({super.key, this.description = "Empty!"});
 
@@ -26,19 +28,20 @@ class _SharedPreferenceState extends State<SharedPreferenceScreen> {
 
   TextEditingController tecUsername = TextEditingController();
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("SharefPref"),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: "SharedPref"),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getBottomLeftRightPadding(),
           child: Column(
             children: [
               const SizedBox(height: 16.0),
-              Text(widget.description),
+              Text(widget.description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),),
               const SizedBox(height: 40.0),
               if (username.isEmpty)
                 Column(

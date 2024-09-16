@@ -2,6 +2,8 @@ import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../widgets/appbar_widget.dart';
+
 class FontAwesomeIconScreen extends StatelessWidget {
   const FontAwesomeIconScreen({super.key, this.description = 'Empty!'});
 
@@ -10,16 +12,16 @@ class FontAwesomeIconScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("FontAwesome Icon"),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: "FontAwesome Icon"),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getPadding(),
           child: Column(
             children: [
-              Text(description),
+              Text(description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),),
               const SizedBox(height: 20.0),
               const Wrap(
                 spacing: 10,

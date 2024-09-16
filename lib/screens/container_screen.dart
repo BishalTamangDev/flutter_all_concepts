@@ -1,6 +1,8 @@
 import 'package:all_concepts/variables/variables.dart';
 import 'package:flutter/material.dart';
 
+import '../widgets/appbar_widget.dart';
+
 class ContainerScreen extends StatelessWidget {
   const ContainerScreen({super.key, this.description = 'Empty!'});
 
@@ -9,17 +11,19 @@ class ContainerScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Container"),
-        centerTitle: true,
-      ),
+      appBar: const AppBarWidget(title: "Container"),
       body: SingleChildScrollView(
         child: Padding(
           padding: Variables.getPadding(),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(description),
+              Text(
+                description,
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(
                 height: 10,
               ),
@@ -31,7 +35,12 @@ class ContainerScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const Text('Simple Container: height: 100. width: 100'),
+              Text(
+                'Simple Container: height: 100. width: 100',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(
                 height: 10,
               ),
@@ -43,8 +52,18 @@ class ContainerScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const Text('Container width full width'),
-              const Text('width : double.infinity'),
+              Text(
+                'Container width full width',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
+              Text(
+                'width : double.infinity',
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(
                 height: 10,
               ),
@@ -59,7 +78,12 @@ class ContainerScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const Text("borderRadius:BorderRadius.circular(8.0)"),
+              Text(
+                "borderRadius:BorderRadius.circular(8.0)",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(
                 height: 10,
               ),
@@ -76,8 +100,12 @@ class ContainerScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const Text(
-                  "borderRadius:BorderRadius.only(\ntopLeft: Radius.circular(8.0))"),
+              Text(
+                "borderRadius:BorderRadius.only(\ntopLeft: Radius.circular(8.0))",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(
                 height: 10,
               ),
@@ -95,7 +123,12 @@ class ContainerScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const Text("border: Border.all(width: 1)"),
+              Text(
+                "border: Border.all(width: 1)",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(
                 height: 10,
               ),
@@ -112,8 +145,12 @@ class ContainerScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              const Text(
-                  "shadow:BoxShadow[\nBoxShadow(blurRadius:5, color: Colors.grey.shade400)\n]"),
+              Text(
+                "shadow:BoxShadow[\nBoxShadow(blurRadius:5, color: Colors.grey.shade400)\n]",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(
                 height: 10,
               ),
@@ -124,7 +161,12 @@ class ContainerScreen extends StatelessWidget {
                   shape: BoxShape.circle,
                 ),
               ),
-              const Text("shape:BoxShape.circle"),
+              Text(
+                "shape:BoxShape.circle",
+                style: TextStyle(
+                  color: Theme.of(context).colorScheme.onSurface,
+                ),
+              ),
               const SizedBox(
                 height: 10,
               ),
