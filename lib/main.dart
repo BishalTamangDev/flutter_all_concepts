@@ -19,6 +19,7 @@ import 'package:all_concepts/screens/input_screen.dart';
 import 'package:all_concepts/screens/listtile_screen.dart';
 import 'package:all_concepts/screens/listview_screen.dart';
 import 'package:all_concepts/screens/margin_screen.dart';
+import 'package:all_concepts/screens/page_not_found_screen.dart';
 import 'package:all_concepts/screens/positioned_screen.dart';
 import 'package:all_concepts/screens/rich_text_screen.dart';
 import 'package:all_concepts/screens/rows_columns_screen.dart';
@@ -45,8 +46,8 @@ final GoRouter _router = GoRouter(
       builder: (context, state) => const HomeScreen(),
     ),
     GoRoute(
-      path: '/alertDialog/:description',
-      name: 'alertDialog',
+      path: '/alert-dialog/:description',
+      name: 'alert-dialog',
       builder: (context, state) {
         final String description =
             state.pathParameters['description'] ?? 'Empty!';
@@ -54,8 +55,8 @@ final GoRouter _router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/bottomNavigationBar/:description',
-      name: 'bottomNavigationBar',
+      path: '/bottom-navigation-bar/:description',
+      name: 'bottom-navigation-bar',
       builder: (context, state) {
         final String description =
             state.pathParameters['description'] ?? 'Empty!';
@@ -63,8 +64,8 @@ final GoRouter _router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/bottomSheet/:description',
-      name: 'bottomSheet',
+      path: '/bottom-sheet/:description',
+      name: 'bottom-sheet',
       builder: (context, state) {
         final String description =
             state.pathParameters['description'] ?? "Empty!";
@@ -90,8 +91,8 @@ final GoRouter _router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/circleAvatar/:description',
-      name: 'circleAvatar',
+      path: '/circle-avatar/:description',
+      name: 'circle-avatar',
       builder: (context, state) {
         final String description =
             state.pathParameters['description'] ?? 'Empty!';
@@ -99,8 +100,8 @@ final GoRouter _router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/clipRRect/:description',
-      name: 'clipRRect',
+      path: '/clip-r-rect/:description',
+      name: 'clip-r-rect',
       builder: (context, state) {
         final String description =
             state.pathParameters['description'] ?? 'Empty!';
@@ -108,8 +109,8 @@ final GoRouter _router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/constrainedBox/:description',
-      name: 'constrainedBox',
+      path: '/constrained-box/:description',
+      name: 'constrained-box',
       builder: (context, state) {
         final String description =
             state.pathParameters['description'] ?? 'Empty!';
@@ -126,8 +127,8 @@ final GoRouter _router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/customFont/:description',
-      name: 'customFont',
+      path: '/custom-font/:description',
+      name: 'custom-font',
       builder: (context, state) {
         final String description =
             state.pathParameters['description'] ?? 'Empty!';
@@ -153,8 +154,8 @@ final GoRouter _router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/fontAwesomeIcon/:description',
-      name: 'fontAwesomeIcon',
+      path: '/font-awesome-icon/:description',
+      name: 'font-awesome-icon',
       builder: (context, state) {
         final String description =
             state.pathParameters['description'] ?? 'Empty!';
@@ -171,8 +172,8 @@ final GoRouter _router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/gridView/:description',
-      name: 'gridView',
+      path: '/grid-view/:description',
+      name: 'grid-view',
       builder: (context, state) {
         final String description =
             state.pathParameters['description'] ?? 'Empty!';
@@ -200,8 +201,8 @@ final GoRouter _router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/inkWell/:description',
-      name: 'inkWell',
+      path: '/ink-well/:description',
+      name: 'ink-well',
       builder: (context, state) {
         final String description =
             state.pathParameters['description'] ?? 'Empty!';
@@ -218,8 +219,8 @@ final GoRouter _router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/listView/:description',
-      name: 'listView',
+      path: '/list-view/:description',
+      name: 'list-view',
       builder: (context, state) {
         final String description =
             state.pathParameters['description'] ?? 'Empty!';
@@ -229,8 +230,8 @@ final GoRouter _router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/listTile/:description',
-      name: 'listTile',
+      path: '/list-tile/:description',
+      name: 'list-tile',
       builder: (context, state) {
         final String description =
             state.pathParameters['description'] ?? 'Empty!';
@@ -256,8 +257,8 @@ final GoRouter _router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/richText/:description',
-      name: 'richText',
+      path: '/rich-text/:description',
+      name: 'rich-text',
       builder: (context, state) {
         final String description =
             state.pathParameters['description'] ?? 'Empty!';
@@ -265,8 +266,8 @@ final GoRouter _router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/rowColumn/:description',
-      name: 'rowColumn',
+      path: '/row-column/:description',
+      name: 'row-column',
       builder: (context, state) {
         final String description =
             state.pathParameters['description'] ?? 'Empty!';
@@ -274,8 +275,8 @@ final GoRouter _router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/sharedPreference/:description',
-      name: 'sharedPreference',
+      path: '/shared-preference/:description',
+      name: 'shared-preference',
       builder: (context, state) {
         final String description =
             state.pathParameters['description'] ?? 'Empty!';
@@ -283,8 +284,8 @@ final GoRouter _router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/sliverAppBar/:description',
-      name: 'sliverAppBar',
+      path: '/sliver-app-bar/:description',
+      name: 'sliver-app-bar',
       builder: (context, state) {
         final String description =
             state.pathParameters['description'] ?? 'Empty!';
@@ -292,8 +293,8 @@ final GoRouter _router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/snackBar/:description',
-      name: 'snackBar',
+      path: '/snack-bar/:description',
+      name: 'snack-bar',
       builder: (context, state) {
         final String description =
             state.pathParameters['description'] ?? 'Empty!';
@@ -301,8 +302,8 @@ final GoRouter _router = GoRouter(
       },
     ),
     GoRoute(
-      path: '/splashScreen/:description',
-      name: 'splashScreen',
+      path: '/splash-screen/:description',
+      name: 'splash-screen',
       builder: (context, state) {
         final String description =
             state.pathParameters['description'] ?? 'Empty!';
@@ -339,20 +340,13 @@ final GoRouter _router = GoRouter(
         );
       },
     ),
+    GoRoute(
+      path: '/page-not-found',
+      name: 'page-not-found',
+      builder: (context, state) => const PageNotFoundScreen(),
+    ),
   ],
-  errorBuilder: (context, state) {
-    return const Scaffold(
-      body: Center(
-        child: Column(
-          children: [
-            Icon(Icons.hourglass_empty),
-            SizedBox(height: 10.0),
-            Text("Page Not Found!"),
-          ],
-        ),
-      ),
-    );
-  },
+  errorBuilder: (context, state) => const PageNotFoundScreen(),
 );
 
 void main() {
@@ -407,167 +401,203 @@ class HomeScreen extends StatelessWidget {
                     onTap: () {
                       String screen = listWidget[index]['title'];
 
-                      if (screen == 'AlertDialog') {
-                        context.pushNamed('alertDialog', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'BottomSheet') {
-                        context.pushNamed('bottomSheet', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'BottomNavigationBar') {
-                        context.pushNamed('bottomNavigationBar',
-                            pathParameters: {
-                              'description':
-                                  listWidget[index]['description'].toString()
-                            });
-                      } else if (screen == 'Button') {
-                        context.pushNamed('button', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'Container') {
-                        context.pushNamed('container', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'Center') {
-                        context.pushNamed('center', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'ClipRRect') {
-                        context.pushNamed('clipRRect', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'CircleAvatar') {
-                        context.pushNamed('circleAvatar', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'ConstrainedBox') {
-                        context.pushNamed('constrainedBox', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'Custom Font') {
-                        context.pushNamed('customFont', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'Drawer') {
-                        context.pushNamed('drawer', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'Expanded') {
-                        context.pushNamed('expanded', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'FontAwesomeIcon') {
-                        context.pushNamed('fontAwesomeIcon', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'Gradient') {
-                        context.pushNamed('gradient', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'GridView') {
-                        context.pushNamed('gridView', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString(),
-                        });
-                      } else if (screen == 'Icon') {
-                        context.pushNamed('icon', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'Image') {
-                        context.pushNamed('image', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'Inkwell') {
-                        context.pushNamed('inkWell', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'Input') {
-                        context.pushNamed('input', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'ListTile') {
-                        context.pushNamed('listTile', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'ListView') {
-                        context.pushNamed('listView', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'Margin') {
-                        context.pushNamed('margin', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'Positioned') {
-                        context.pushNamed('positioned', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'RichText') {
-                        context.pushNamed('richText', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'Row & Column') {
-                        context.pushNamed('rowColumn', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'SharedPreference') {
-                        context.pushNamed('sharedPreference', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'SliverAppBar') {
-                        context.pushNamed('sliverAppBar', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'SnackBar') {
-                        context.pushNamed('snackBar', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'SplashScreen') {
-                        context.pushNamed('splashScreen', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'Stack') {
-                        context.pushNamed('stack', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'Text') {
-                        context.pushNamed('text', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
-                      } else if (screen == 'Wrap') {
-                        context.pushNamed('wrap', pathParameters: {
-                          'description':
-                              listWidget[index]['description'].toString()
-                        });
+                      switch (screen) {
+                        case 'AlertDialog':
+                          context.pushNamed('alert-dialog', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'BottomSheet':
+                          context.pushNamed('bottom-sheet', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'BottomNavigationBar':
+                          context.pushNamed('bottom-navigation-bar',
+                              pathParameters: {
+                                'description':
+                                    listWidget[index]['description'].toString()
+                              });
+                          break;
+                        case 'Button':
+                          context.pushNamed('button', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'Container':
+                          context.pushNamed('container', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'Center':
+                          context.pushNamed('center', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'ClipRRect':
+                          context.pushNamed('clip-r-rect', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'CircleAvatar':
+                          context.pushNamed('circle-avatar', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'ConstrainedBox':
+                          context.pushNamed('constrained-box', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                        case 'Custom Font':
+                          context.pushNamed('custom-font', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'Drawer':
+                          context.pushNamed('drawer', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'Expanded':
+                          context.pushNamed('expanded', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'FontAwesomeIcon':
+                          context.pushNamed('font-awesome-icon',
+                              pathParameters: {
+                                'description':
+                                    listWidget[index]['description'].toString()
+                              });
+                          break;
+                        case 'Gradient':
+                          context.pushNamed('gradient', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'GridView':
+                          context.pushNamed('grid-view', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString(),
+                          });
+                          break;
+                        case 'Icon':
+                          context.pushNamed('icon', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'Image':
+                          context.pushNamed('image', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'Inkwell':
+                          context.pushNamed('ink-well', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'Input':
+                          context.pushNamed('input', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'ListTile':
+                          context.pushNamed('list-tile', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'ListView':
+                          context.pushNamed('list-view', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'Margin':
+                          context.pushNamed('margin', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'Positioned':
+                          context.pushNamed('positioned', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'RichText':
+                          context.pushNamed('rich-text', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'Row & Column':
+                          context.pushNamed('row-column', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'SharedPreference':
+                          context.pushNamed('shared-preference',
+                              pathParameters: {
+                                'description':
+                                    listWidget[index]['description'].toString()
+                              });
+                          break;
+                        case 'SliverAppBar':
+                          context.pushNamed('sliver-app-bar', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'SnackBar':
+                          context.pushNamed('snack-bar', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'SplashScreen':
+                          context.pushNamed('splash-screen', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'Stack':
+                          context.pushNamed('stack', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'Text':
+                          context.pushNamed('text', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'Wrap':
+                          context.pushNamed('wrap', pathParameters: {
+                            'description':
+                                listWidget[index]['description'].toString()
+                          });
+                          break;
+                        default:
+                          context.pushNamed('page-not-found');
                       }
                     },
                     title: Padding(

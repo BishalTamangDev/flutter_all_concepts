@@ -39,7 +39,7 @@ class _SnackBarState extends State<SnackBarScreen> {
                       ),
                       content: Text("This is the SnackBar message.",
                         style: TextStyle(
-                          color: Theme.of(context).colorScheme.onSurface,
+                          color: Theme.of(context).colorScheme.onPrimary,
                         ),),
                       behavior: SnackBarBehavior.floating,
                       backgroundColor: Theme.of(context).colorScheme.primary,
