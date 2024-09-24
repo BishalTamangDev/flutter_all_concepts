@@ -208,6 +208,13 @@ final List<Map> listWidget = [
         'The Stack widget in Flutter allows you to overlay widgets on top of each other. It positions its children relative to the edges of the Stack, making it useful for creating layered or complex UI layouts.',
   },
   {
+    'title': 'Tab',
+    'short_description':
+        'The Tab Widget in Flutter is used to implement a horizontal navigation bar where multiple tabs can be displayed. It\'s often paired with the TabBar (to create tabs) and the TabBarView (to manage content for each tab). This combination allows users to easily switch between different views within the same screen.',
+    'description':
+        'The Tab Widget in Flutter is used to create a tab-based navigation system, where a TabBar displays a row of customizable tabs, and a TabBarView shows the corresponding content for each tab. A TabController manages tab selection, allowing programmatic switching between tabs. Tabs can be made scrollable with the isScrollable property for better usability when there are many tabs. The appearance of tabs and their indicator is highly customizable, including color and size. It is often integrated with the Scaffold widget, placing the TabBar in the AppBar.',
+  },
+  {
     'title': 'Text',
     'short_description':
         'A widget used to display styled or unstyled text on the screen, customizable with various formatting options.',

@@ -38,10 +38,12 @@ class _SharedPreferenceState extends State<SharedPreferenceScreen> {
           child: Column(
             children: [
               const SizedBox(height: 16.0),
-              Text(widget.description,
+              Text(
+                widget.description,
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.onSurface,
-                ),),
+                ),
+              ),
               const SizedBox(height: 40.0),
               if (username.isEmpty)
                 Column(
@@ -117,9 +119,7 @@ class _SharedPreferenceState extends State<SharedPreferenceScreen> {
 
   void getPrefValue() async {
     var prefs = await SharedPreferences.getInstance();
-
     var str = prefs.getString(keyName);
-
     username = str ?? '';
     setState(() {});
   }

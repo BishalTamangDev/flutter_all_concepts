@@ -28,6 +28,7 @@ import 'package:all_concepts/screens/sliver_app_bar_screen.dart';
 import 'package:all_concepts/screens/snackbar_screen.dart';
 import 'package:all_concepts/screens/splash_home_screen.dart';
 import 'package:all_concepts/screens/stack_screen.dart';
+import 'package:all_concepts/screens/tab_screen.dart';
 import 'package:all_concepts/screens/text_screen.dart';
 import 'package:all_concepts/screens/wrap_screen.dart';
 import 'package:all_concepts/theme/theme.dart';
@@ -320,6 +321,15 @@ final GoRouter _router = GoRouter(
       },
     ),
     GoRoute(
+      path: '/tab/:description',
+      name: 'tab',
+      builder: (context, state) {
+        final String description =
+            state.pathParameters['description'] ?? 'Empty!';
+        return TabScreen(description: description);
+      },
+    ),
+    GoRoute(
       path: '/text/:description',
       name: 'text',
       builder: (context, state) {
@@ -582,6 +592,12 @@ class HomeScreen extends StatelessWidget {
                           context.pushNamed('stack', pathParameters: {
                             'description':
                                 listWidget[index]['description'].toString()
+                          });
+                          break;
+                        case 'Tab':
+                          context.pushNamed('tab', pathParameters: {
+                            'description':
+                            listWidget[index]['description'].toString()
                           });
                           break;
                         case 'Text':
